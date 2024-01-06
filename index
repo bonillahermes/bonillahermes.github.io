@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título de tu Página</title>
+    <!-- Enlaza tu hoja de estilos CSS aquí si tienes una -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Contenido de tu página aquí -->
+    <h1>Bienvenido a Mi Página en GitHub</h1>
+    <p>Este es el comienzo de mi portafolio en GitHub Pages.</p>
+    <!-- Enlaza tu archivo JavaScript aquí si tienes uno -->
+    <script src="script.js"></script>
+</body>
+</html>
