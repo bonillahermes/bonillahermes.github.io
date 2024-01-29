@@ -1,9 +1,494 @@
+/* styles.css */
+
+/* Reset básico y estilos del cuerpo del documento */
 body {
-    font-family: Arial, sans-serif;
+    margin: 0;
+    font-family: 'Open Sans', Arial, sans-serif;
+    background-color: #f5f5f5; /* Fondo claro para el cuerpo */
+    color: #333; /* Color de texto general en escala de grises */
+}
+
+/* Estilos de la barra de navegación principal */
+.theme-main-menu {
+    background: linear-gradient(to right, rgba(45, 45, 45, 0.8), rgba(26, 26, 26, 0.8)); /* Degradado de gris oscuro con transparencia */
+    background-color: black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center; /* Alinea elementos internos verticalmente */
+    height: 150px; /* Altura optimizada para la barra de navegación */
+    justify-content: center; 
+    padding: 0 30px; /* Agrega un poco de padding en los lados */
+    transition: height 0.3s ease; /* Agrega una transición suave a la propiedad height */
+}
+
+/* Centrado de elementos dentro de la barra de navegación */
+.theme-main-menu .nav-container {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center; /* según donde quieras que estén tus enlaces */
+    align-items: center; /* Alinea elementos internos verticalmente */
+    width: 100%; /* Asume todo el ancho disponible */
+    padding: 0 15px; /* Ajusta el padding como sea necesario */
+}
+
+/* Navegación */
+.theme-main-menu .navbar {
+    flex: 1 0 100%;
+    justify-content: center; /* Centra la navegación en el espacio restante */
+    order: 2; /* Asegura que la navegación siga al logo */
+    flex-grow: 1; /* Permite que la barra de navegación crezca para llenar el espacio disponible */
+}
+
+.theme-main-menu .navbar {
+    flex: 1; /* Permite que la barra de navegación crezca para llenar el espacio disponible */
+    justify-content: center; /* Centra la navegación en el espacio restante */
+}
+
+.theme-main-menu .nav-item {
+    padding: 0 10px; /* Espaciado horizontal entre elementos de la lista */
+}
+
+.flex-grow-1.d-flex.justify-content-center {
+    flex-grow: 1;
+}
+
+.navbar-nav {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin: 0 1rem;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: #00adb5; /* al pasar el mouse */
+}
+
+/* Botón del menú para dispositivos móviles */
+.navbar-toggler {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; /* Oculto en dispositivos de escritorio */
+}
+
+.navbar-nav.main-side-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Puede que necesites ajustar esto según tus necesidades */
+}
+
+/* Logo */
+.theme-main-menu .logo {
+    flex: 0 0 auto; /* Asegura que el logo no se expanda y se ajuste a su contenido */
+    text-align: left;
+    margin-left: 20px; /* Ajusta este valor según necesites para añadir espacio a la izquierda */
+    margin-right: auto; /* Mantiene los elementos siguientes a la derecha */
+    order: 1; /* Mantiene el logo al inicio, aunque esto puede ser innecesario si ya es el primer elemento */
+}
+
+.logo img {
+    height: 60px; /* Altura fija para el logo */
+    width: auto; /* Ancho automático para mantener la proporción */
+}
+
+
+/* Botones de idioma */
+.language-button-group {
+    display: flex;
+    align-items: center;
+}
+
+.language-button-group li {
+    margin-right: 15px;
+    cursor: pointer; /* Indica que los elementos son clicables */
+}
+
+.language-button-group li:last-child {
+    margin-right: 0;
+}
+
+.language-button-group img {
+    height: 20px; /* Ajusta el tamaño según sea necesario */
+    transition: transform 0.3s ease; /* Animación suave para el efecto de hover */
+}
+
+.language-button-group img:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+
+/* Estilos responsivos para dispositivos móviles */
+@media (max-width: 768px) {
+    .theme-main-menu {
+        height: auto; /* Altura automática en dispositivos móviles */
+    }
+    
+    .theme-main-menu .logo {
+        margin-left: 0; /* El logo puede estar alineado al borde en dispositivos móviles */
+    }
+    
+    .navbar-toggler {
+        display: block; /* Asegúrate de que el botón de menú se muestre en móviles */
+    }
+    
+    .navbar-collapse.collapse.show {
+        display: block;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-item {
+        padding: 0.5rem 0;
+    }
+}
+
+
+/* Estilos del carrusel*/
+.carousel {
+    position: relative;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item {
+    position: relative;
+    display: none;
+    float: left;
+    width: 100%;
+    margin-right: -100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: -webkit-transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+    display: block;
+}
+
+
+.carousel-item img {
+    width: 100%; /* Asegura que la imagen sea siempre tan ancha como su contenedor */
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+    object-fit: cover; /* Cubre el área del contenedor sin estirar la imagen */
+    min-height: 400px; /* Puedes ajustar esto al mínimo que desees para la altura de tus imágenes */
+    max-height: 600px; /* Puedes ajustar esto al máximo que desees para la altura de tus imágenes */
+    display: block;
+}
+
+.carousel-caption {
+    position: absolute;
+    left: 30%;
+    transform: translateX(-50%);
+    top: 50%; /* Ajusta el valor para centrar verticalmente */
+    z-index: 10;
+    padding: 3rem;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 5px;
+    text-align: left;
+    width: 70%;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px); /* Ajusta el valor para centrar verticalmente */
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+.carousel-item.active .carousel-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.carousel-caption h5 {
+    font-size: 2.5rem; /* Tamaño de la fuente del título */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0 0 0.5rem; /* Agrega un poco de margen debajo del título */
+}
+
+.carousel-caption p {
+    font-size: 1.5rem; /* Tamaño de la fuente del subtítulo */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin: 0; /* Remueve los márgenes adicionales */
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #333;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+
+.carousel-indicators .active {
+    background-color: #333;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 15%;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    opacity: 0.5;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: no-repeat 50%/100% 100%;
+}
+
+/* Iconos de Font Awesome con fondo para el control del carrusel */
+.carousel-control-prev-icon {
+    background: #333; /* Fondo para la flecha izquierda */
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="16" height="16" fill="%23fff"><path d="M5.5 0l-3 3 3 3V5H8V3H2V0z"/></svg>'); /* Flecha izquierda de Font Awesome */
+}
+
+.carousel-control-next-icon {
+    background: #333; /* Fondo para la flecha derecha */
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="16" height="16" fill="%23fff"><path d="M2 0v3h5V0H2zm0 5v3h5V5H2z"/></svg>'); /* Flecha derecha de Font Awesome */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Servicios */
+.fancy-portfolio-one {
     background-color: #f8f8f8;
+    padding-top: 120px;
+    padding-bottom: 100px;
+}
+
+.title-style-six h2 {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 60px;
     color: #333;
 }
 
-h1 {
-    color: #556677;
+.portfolioSliderOne {
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 30px;
 }
+
+.portfolioSliderOne .item {
+    flex: 0 0 20%;
+    max-width: 20%;
+    padding: 0 10px;
+}
+
+.portfolioSliderOne .img-meta {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.portfolioSliderOne img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.slider-arrows {
+    margin-top: 20px;
+}
+
+.prev_c,
+.next_c {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #333;
+    cursor: pointer;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.prev_c img,
+.next_c img {
+    width: 25px;
+    height: 25px;
+    fill: #fff;
+}
+
+.prev_c:hover,
+.next_c:hover {
+    background-color: #555;
+}
+
+
+
+
+/* Estilos del footer */
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    font-family: 'Open Sans', Arial, sans-serif; /* Usar la misma tipografía que en el resto del sitio */
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.footer-section {
+    display: flex;
+    flex: 1;
+    padding: 1rem; /* Añade padding para evitar que el contenido toque los bordes */
+    text-align: left;
+    flex-direction: column;
+}
+
+.footer-title {
+    margin-bottom: 1rem;
+    font-weight: 600; /* Más pesado que el texto normal pero no tan grueso como bold */
+    font-size: 1.25rem; /* Ajusta el tamaño de la fuente según tu diseño */
+    text-transform: uppercase; /* Todos los títulos en mayúsculas */
+    letter-spacing: 0.05em; /* Espaciado entre caracteres */
+    color: #ffffff; /* Color blanco, cambia si es necesario */
+    border-bottom: 2px solid #00adb5; /* Una línea de color debajo del título, cambia el color si es necesario */
+    padding-bottom: 0.5rem; /* Espacio entre el título y la línea debajo */
+    display: inline-block; /* Para que el borde inferior se ajuste al texto */
+    margin-top: 0; /* Puede que necesites ajustar el margen superior */
+}
+
+
+/* Sección para medios sociales con iconos */
+.footer-social {
+    display: flex;
+    justify-content: center; /* Centra los iconos de las redes sociales */
+}
+
+.footer-social a {
+    margin: 0 10px; /* Espaciado entre iconos */
+    font-size: 1.5rem; /* Tamaño más grande para los iconos */
+}
+
+.footer-social a:hover {
+    color: #00adb5;
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+    transition: color 0.3s ease, transform 0.3s ease; /* Suaviza la transición de los efectos */
+}
+
+/* Responsividad */
+@media (min-width: 769px) {
+    .footer .container {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer .container,
+    .footer-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-social {
+        justify-content: center; /* Asegura que los iconos estén centrados en dispositivos móviles */
+        margin-top: 1rem; /* Añade espacio arriba de los iconos en vista móvil */
+    }
+}
+
+/* Información de derechos de autor y atribuciones */
+.footer-copy {
+    border-top: 1px solid #404040;
+    padding-top: 1rem;
+    text-align: center; /* Centra el texto de derechos de autor */
+    margin-top: 2rem; /* Añade espacio antes de la sección de derechos de autor */
+}
+
+/* Estilos para enlaces en el footer */
+a.footer-link {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a.footer-link:hover {
+    color: #00adb5;
+}
+

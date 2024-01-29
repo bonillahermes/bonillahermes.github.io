@@ -2,16 +2,310 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título de tu Página</title>
-    <!-- Enlaza tu hoja de estilos CSS aquí si tienes una -->
+    <title>Hermes Bonilla</title>
+    <meta name="description" content="Hermes Bonilla - Análisis de Datos e Inteligencia Artificial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#da532c">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"/>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Contenido de tu página aquí -->
-    <h1>Bienvenido a Mi Página en GitHub</h1>
-    <p>Este es el comienzo de mi portafolio en GitHub Pages.</p>
-    <!-- Enlaza tu archivo JavaScript aquí si tienes uno -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
+
     <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/b5b69dd3f6.js" crossorigin="anonymous"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Z2LF9ST00"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-8Z2LF9ST00');
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    <!-- Menú Mega -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mmenu-js/9.3.0/mmenu.js"></script>
+
+    <!-- Biblioteca AOS js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Js count to -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.appear/0.4.1/jquery.appear.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countto/1.2.0/jquery.countTo.min.js"></script>
+
+    <!-- Slick Slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+    <!-- Validator js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.11.0/validator.min.js"></script>
+
+    <!-- Fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+    <!-- Tilt js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+    
+</head>
+
+<body onload="load()" data-spy="scroll" data-target="#one-page-nav" data-offset="120">
+
+<!-- Barra de navegación -->
+<div class="theme-main-menu sticky-menu theme-menu-five" id="navbar">
+    <div class="d-flex align-items-center justify-content-between">
+        <!-- Logo -->
+        <div class="logo">
+            <a href="index.html"><img src="images/Logo.png" alt="Logo" /></a>
+        </div>
+        <nav id="mega-menu-holder" class="navbar navbar-expand-lg">
+            <div class="container nav-container">
+                <!-- Botón para menú en móviles -->
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="flaticon-menu-of-three-lines"></i>
+                </button>
+                <!-- Contenedor  de navegación -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                    <div class="flex-grow-1 d-flex justify-content-center">
+                        <nav id="mega-menu-holder" class="navbar navbar-expand-lg">
+                            <ul class="navbar-nav main-side-nav font-gordita" id="one-page-nav">
+                                <!-- Elementos de navegación aquí -->
+                                <li class="nav-item">
+                                    <a data-tag="H_menu_One" href="services.html" class="nav-link">Servicios</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a data-tag="H_menu_Four" href="blog.html" class="nav-link">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a data-tag="H_menu_Five" href="about_me.html" class="nav-link">Sobre Mí</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a data-tag="H_menu_Six" href="proyects.html" class="nav-link">Proyectos</a>
+                                </li>
+                                <!-- Contacto -->
+                                <li class="nav-item">
+                                    <a data-tag="H_menu_Two" href="#" class="nav-link" data-toggle="modal" data-target="#contactModal">Contacto</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://www.linkedin.com/in/bonillahermes/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                </li>
+                                <!-- Botones de idioma -->
+                                <li class="d-sm-flex">
+                                    <ul class="language-button-group d-flex align-items-center justify-content-center">
+                                        <li class="lenguaje">
+                                            <!-- Cambiar el idioma a inglés -->
+                                            <img src="images/en.png" alt="English" onclick="setLanguage('en')" style="cursor: pointer;" />
+                                        </li>
+                                        <li class="lenguaje">
+                                            <!-- Cambiar el idioma a español -->
+                                            <img src="images/es.png" alt="Español" onclick="setLanguage('es')" style="cursor: pointer;" />
+                                        </li>
+                                    </ul>
+                                </li>                                                      
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!-- Carrusel -->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <!-- Indicadores del carrusel -->
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <!-- Primer Banner -->
+        <div class="carousel-item active">
+            <img src="images/carrusel1.png" alt="Ciencia de Datos" />
+            <div class="carousel-caption d-md-block text_banner">
+                <h5 data-tag="H_banner_One_T" class="text-left">Transformando Datos en Decisiones Inteligentes</h5>
+                <p data-tag="H_banner_One_S" class="text-left">Descubre cómo nuestra ciencia de datos impulsa el crecimiento del negocio</p>
+            </div>
+        </div>
+        <!-- Segundo Banner -->
+        <div class="carousel-item">
+            <img src="images/carrusel2.png" alt="Inteligencia Artificial" />
+            <div class="carousel-caption d-md-block text_banner">
+                <h5 data-tag="H_banner_Two_T" class="text-left">Innovación con Inteligencia Artificial</h5>
+                <p data-tag="H_banner_Two_S" class="text-left">Implementa soluciones de IA que crean valor real y sostenible</p>
+            </div>
+        </div>
+        <!-- Tercer Banner -->
+        <div class="carousel-item">
+            <img src="images/carrusel3.png" alt="Consultoría Estadística" />
+            <div class="carousel-caption d-md-block text_banner">
+                <h5 data-tag="H_banner_Three_T" class="text-left">Consultoría Estadística Experta</h5>
+                <p data-tag="H_banner_Three_S" class="text-left">Soluciones estadísticas precisas para desafíos complejos</p>
+            </div>
+        </div>
+    </div>
+    <!-- Controles del carrusel -->
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div id="contactModal" style="display: none;">
+    <h2>Contacto</h2>
+    <form id="contactForm">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+
+
+
+<!-- Portafolio -->
+<div class="fancy-portfolio-one mt-0 md-mt-100" id="services">
+    <div class="container">
+        <div class="title-style-six">
+            <h2 data-tag="Servicios"></h2>
+        </div>
+        <!-- /.title-style-six -->
+    </div>
+
+    <div class="portfolioSliderOne pt-120 md-pt-70">
+        <div class="item">
+            <a href="services.html#DataAnalysis">
+                <div class="img-meta"><img src="images/construction.png" alt="" /></div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="services.html#MachineLearning">
+                <div class="img-meta"><img src="images/construction.png" alt="" /></div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="services.html#Consulting">
+                <div class="img-meta"><img src="images/construction.png" alt="" /></div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="services.html#Visualization">
+                <div class="img-meta"><img src="images/construction.png" alt="" /></div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="services.html#AI">
+                <div class="img-meta"><img src="images/construction.png" alt="" /></div>
+            </a>
+        </div>
+    </div>
+
+    <div class="slider-arrows d-flex justify-content-center">
+        <div class="prev_c d-flex align-items-center justify-content-center"><i class="fas fa-chevron-left"></i></div>
+        <div class="next_c d-flex align-items-center justify-content-center"><i class="fas fa-chevron-right"></i></div>
+    </div>
+</div>
+
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+
+        <!-- Primera columna: Encuéntrame En y redes sociales -->
+        <div class="footer-section">
+            <h3 class="footer-title">Encuéntrame En:</h3><!-- Título de la sección -->
+            <div class="footer-brand">
+            </div>
+            <div class="footer-social">
+                <!-- Íconos de redes sociales -->
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/bonillahermes/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/bonillahermes" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/bonillahermes12/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- X (antes Twitter) -->
+                <a href="https://twitter.com/bonillahermes12" target="_blank" aria-label="X">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <!-- Whatsapp -->
+                <a href="https://wa.me/573009769468" target="_blank" aria-label="Whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Segunda columna: Contacto Adicional -->
+        <div class="footer-section">
+            <h3 class="footer-title">Contacto Adicional</h3> <!-- Título de la sección -->
+            <div class="footer-contact">
+                <p>
+                    <a href="mailto:bonillahermes@gmail.com">bonillahermes@gmail.com</a> <!-- Enlace de correo electrónico -->
+                </p>
+                <p>
+                    <a href="tel:+573009769468">+57 (300) 976-9468</a> <!-- Enlace telefónico -->
+                </p>
+                <!-- Dirección -->
+                <p>Cra 54 # 64A - 45, Bogotá, Colombia</p>
+                <!-- Horarios de atención, si es aplicable -->
+                <p>Lunes a Viernes: 9:00 - 18:00</p>
+            </div>
+        </div>
+
+        <!-- Tercera columna: Derechos reservados -->
+        <!-- Tercera columna: Derechos reservados y enlaces legales -->
+        <div class="footer-section">
+            <h3 class="footer-title">Legal</h3>
+                <p>
+                    <a href="/politica-de-privacidad" aria-label="Política de Privacidad">Política de Privacidad</a> |
+                    <a href="/terminos-y-condiciones" aria-label="Términos y Condiciones">Términos y Condiciones</a> |
+                    <a href="/politica-de-cookies" aria-label="Política de Cookies">Política de Cookies</a>
+                </p>
+            <div class="footer-copy">
+                <p>&copy; 2024 Hermes Bonilla. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
+
