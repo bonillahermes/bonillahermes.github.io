@@ -64,24 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
         touch: false // Deshabilita el cierre táctil, puedes cambiarlo si es necesario
     });
 
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-        // Lógica de validación del formulario
-        var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
-        var message = document.getElementById("message").value;
-
-        if (!name || !email || !message) {
-            alert("Por favor, completa todos los campos.");
-            event.preventDefault();
-            return;
-        }
-
-        // Lógica de envío del formulario (puedes agregar código aquí)
-        alert("Formulario enviado (agrega tu lógica aquí)");
-        $.fancybox.close(); // Cierra FancyBox después de enviar el formulario
-        event.preventDefault(); // Evita que se recargue la página al enviar el formulario
-    });
-
     $('.js-tilt').tilt();
 
     const titles = [
