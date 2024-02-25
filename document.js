@@ -12,31 +12,23 @@ document.addEventListener('DOMContentLoaded', function() {
         anchorPlacement: 'top-bottom',
     });
 
-    $(document).ready(function(){
-        $('.testimonialsSlider').slick({
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 5000,
-            dots: true,
-            centerMode: true,
-            centerPadding: '60px',
-            variableWidth: false,
-            responsive: [
-                { 
-                    breakpoint: 768,
-                    settings: {
-                        centerMode: true,
-                        centerPadding: '40px',
-                        slidesToShow: 1
-                    }
-                },
-            ]    
-        });
+    // Slick Slider para una clase específica (ajusta '.your-slider-class' según tu HTML)
+    $('.your-slider-class').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        dots: true,
+        arrows: true,
+        responsive: [
+            { breakpoint: 1024, settings: { slidesToShow: 2 } },
+            { breakpoint: 600, settings: { slidesToShow: 1 } }
+        ],
+        pauseOnFocus: true,
+        pauseOnHover: true,
+        adaptiveHeight: true,
     });
-    
-    
+
     // Fancybox para galerías
     $('[data-fancybox="gallery"]').fancybox({
         loop: true,

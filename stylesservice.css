@@ -1,0 +1,465 @@
+/* Variables CSS */
+:root {
+  --primary-color: #007aff; 
+  --text-color: #333;
+  --background-color-page: #f7f6f6; /* Color de fondo de la página en general */
+  --background-color-section: #ffffff; /* Color de fondo para las secciones de servicios */
+  --background-color-section-alt: #464343; /* Color de fondo alternativo para secciones */
+  --cta-color: #007aff; /* Color del botón CTA */
+  --cta-hover-color: #005ecb;
+  --font-family: 'Helvetica Neue', 'Roboto', sans-serif;
+}
+
+/* Reset básico y estilos de fuente */
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background: linear-gradient(var(--gradient-start), var(--gradient-end)); /* Declaración del degradado */
+}
+
+
+/*Barra de navegación*/
+
+/* Estilos de la barra de navegación principal */
+.theme-main-menu {
+  background: linear-gradient(to right, rgba(45, 45, 45, 0.8), rgba(26, 26, 26, 0.8)); /* Degradado de gris oscuro con transparencia */
+  background-color: black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center; /* Alinea elementos internos verticalmente */
+  height: 150px; /* Altura optimizada para la barra de navegación */
+  justify-content: center; 
+  padding: 0 30px; /* Agrega un poco de padding en los lados */
+  transition: height 0.3s ease; /* Agrega una transición suave a la propiedad height */
+}
+
+/* Centrado de elementos dentro de la barra de navegación */
+.theme-main-menu .nav-container {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center; /* según donde quieras que estén tus enlaces */
+  align-items: center; /* Alinea elementos internos verticalmente */
+  width: 100%; /* Asume todo el ancho disponible */
+  padding: 0 15px; /* Ajusta el padding como sea necesario */
+}
+
+/* Navegación */
+.theme-main-menu .navbar {
+  flex: 1 0 100%;
+  justify-content: center; /* Centra la navegación en el espacio restante */
+  order: 2; /* Asegura que la navegación siga al logo */
+  flex-grow: 1; /* Permite que la barra de navegación crezca para llenar el espacio disponible */
+}
+
+.theme-main-menu .navbar {
+  flex: 1; /* Permite que la barra de navegación crezca para llenar el espacio disponible */
+  justify-content: center; /* Centra la navegación en el espacio restante */
+}
+
+.theme-main-menu .nav-item {
+  padding: 0 10px; /* Espaciado horizontal entre elementos de la lista */
+}
+
+.flex-grow-1.d-flex.justify-content-center {
+  flex-grow: 1;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0 1rem;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: #00adb5; /* al pasar el mouse */
+}
+
+/* Botón del menú para dispositivos móviles */
+.navbar-toggler {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none; /* Oculto en dispositivos de escritorio */
+}
+
+.navbar-nav.main-side-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Puede que necesites ajustar esto según tus necesidades */
+}
+
+/* Logo */
+.theme-main-menu .logo {
+  flex: 0 0 auto; /* Asegura que el logo no se expanda y se ajuste a su contenido */
+  text-align: left;
+  margin-left: 20px; /* Ajusta este valor según necesites para añadir espacio a la izquierda */
+  margin-right: auto; /* Mantiene los elementos siguientes a la derecha */
+  order: 1; /* Mantiene el logo al inicio, aunque esto puede ser innecesario si ya es el primer elemento */
+}
+
+.logo img {
+  height: 60px; /* Altura fija para el logo */
+  width: auto; /* Ancho automático para mantener la proporción */
+}
+
+
+/* Botones de idioma */
+.language-button-group {
+  display: flex;
+  align-items: center;
+}
+
+.language-button-group li {
+  margin-right: 15px;
+  cursor: pointer; /* Indica que los elementos son clicables */
+}
+
+.language-button-group li:last-child {
+  margin-right: 0;
+}
+
+.language-button-group img {
+  height: 20px; /* Ajusta el tamaño según sea necesario */
+  transition: transform 0.3s ease; /* Animación suave para el efecto de hover */
+}
+
+.language-button-group img:hover {
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+
+/* Estilos responsivos para dispositivos móviles */
+@media (max-width: 768px) {
+  .theme-main-menu {
+      height: auto; /* Altura automática en dispositivos móviles */
+  }
+  
+  .theme-main-menu .logo {
+      margin-left: 0; /* El logo puede estar alineado al borde en dispositivos móviles */
+  }
+  
+  .navbar-toggler {
+      display: block; /* Asegúrate de que el botón de menú se muestre en móviles */
+  }
+  
+  .navbar-collapse.collapse.show {
+      display: block;
+  }
+
+  .navbar-nav {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .nav-item {
+      padding: 0.5rem 0;
+  }
+}
+
+/* Estilos del encabezado */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estilos principales y espaciado */
+main {
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Estilos de las Secciones de Servicios */
+.service-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  background-color: var(--background-color-section); /* Fondo blanco para secciones de servicios */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(27, 27, 27, 0.1);
+  overflow: hidden;
+  opacity: 0; /* Inicialmente oculto hasta que se anime */
+  transform: translateY(30px); /* Comienza un poco abajo de su posición final */
+}
+
+/* Estilos para descripciones e imágenes */
+.service-section .description, .service-section .image {
+  flex: 1;
+  padding: 20px;
+  min-width: 300px;
+}
+
+.service-section.alt-layout {
+  flex-direction: row-reverse; /* Invierte el orden para las secciones alternas */
+  background-color: black;
+}
+
+/* Estilos de imagen específicos */
+.service-section .image img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  border-radius: 8px; /* Bordes redondeados */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Transiciones suaves para transform y filter */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+}
+
+.service-section .image img:hover {
+  transform: scale(1.03); /* Efecto de zoom sutil al pasar el ratón */
+  filter: brightness(1.1); /* Ligeramente más brillante al pasar el ratón */
+}
+
+.service-section .description {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0; /* Establecer la opacidad inicial a 0 para que la animación se muestre */
+  animation-delay: 0.3s; /* Retrasar la animación para sincronizarla con la carga de la página */
+}
+
+/* Estilos de encabezado de la descripción */
+.service-section .description h2 {
+  font-size: 2em; /* Ajusta según necesidad */
+  font-weight: bold;
+  margin-bottom: 0.5em; /* Da espacio entre el título y el párrafo */
+  color: #0a0a0a; /* O cualquier color que contraste bien con el fondo */
+}
+
+/* Estilos de párrafo de la descripción */
+.service-section .description p {
+  font-size: 1em; /* Ajusta según necesidad */
+  line-height: 1.6; /* Espaciado entre líneas para una mejor legibilidad */
+  color: #222222; /* O cualquier color que contraste bien con el fondo */
+  margin-bottom: 1em; /* Espacio antes del botón CTA */
+}
+
+/* Estilos para animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes easeInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes easeInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Asignación de animaciones a elementos */
+.service-section.animate {
+  animation: moveUp 0.6s ease-out forwards;
+}
+
+.service-section:nth-child(odd) {
+  background-color: var(--background-color-odd); /* Gris claro para secciones impares */
+  color: var(--text-color);
+}
+
+.service-section:nth-child(even) {
+  background-color: var(--background-color-even); /* Gris oscuro para secciones pares */
+}
+
+.service-section:nth-child(odd) .description {
+  opacity: 0; /* Inicialmente oculto hasta que se anime */
+  transform: translateX(-50px); /* Comienza a la izquierda de su posición final */
+  animation: easeInLeft 0.6s ease-out forwards;
+}
+
+.service-section:nth-child(even) .description {
+  opacity: 0; /* Inicialmente oculto hasta que se anime */
+  transform: translateX(50px); /* Comienza a la derecha de su posición final */
+  animation: easeInRight 0.6s ease-out forwards;
+}
+
+.service-section:nth-child(odd) .image { animation: scaleUp 0.6s ease-out forwards; }
+.service-section:nth-child(even) .image { animation: rotateIn 0.6s ease-out forwards; }
+
+/* Estilos para botones CTA */
+.cta {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  font-size: 1em; /* Ajusta según necesidad */
+  padding: 10px 20px; /* Relleno alrededor del texto */
+  background-color: var(--primary-color); /* Usa una variable o un color que destaque */
+  color: #ffffff; /* Texto claro para contraste */
+  border: none; /* Remueve el borde si existe */
+  cursor: pointer; /* Cambia el cursor a una mano para indicar interactividad */
+}
+
+.cta:hover {
+  background-color: var(--cta-hover-color);
+}
+
+/* Estilos de responsividad */
+@media (max-width: 768px) {
+  .service-section { flex-direction: column; }
+  .service-section.alt-layout { flex-direction: column; }
+  .service-section .description, .service-section .image { animation: fadeInUp 0.6s ease-out forwards; }
+}
+
+/* Estilos del footer */
+.footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  font-family: 'Open Sans', Arial, sans-serif; /* Usar la misma tipografía que en el resto del sitio */
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.footer-section {
+  display: flex;
+  flex: 1;
+  padding: 1rem; /* Añade padding para evitar que el contenido toque los bordes */
+  text-align: left;
+  flex-direction: column;
+}
+
+.footer-title {
+  margin-bottom: 1rem;
+  font-weight: 600; /* Más pesado que el texto normal pero no tan grueso como bold */
+  font-size: 1.25rem; /* Ajusta el tamaño de la fuente según tu diseño */
+  text-transform: uppercase; /* Todos los títulos en mayúsculas */
+  letter-spacing: 0.05em; /* Espaciado entre caracteres */
+  color: #ffffff; /* Color blanco, cambia si es necesario */
+  border-bottom: 2px solid #00adb5; /* Una línea de color debajo del título, cambia el color si es necesario */
+  padding-bottom: 0.5rem; /* Espacio entre el título y la línea debajo */
+  display: inline-block; /* Para que el borde inferior se ajuste al texto */
+  margin-top: 0; /* Puede que necesites ajustar el margen superior */
+}
+
+
+/* Sección para medios sociales con iconos */
+.footer-social {
+  display: flex;
+  justify-content: center; /* Centra los iconos de las redes sociales */
+}
+
+.footer-social a {
+  margin: 0 10px; /* Espaciado entre iconos */
+  font-size: 1.5rem; /* Tamaño más grande para los iconos */
+}
+
+.footer-social a:hover {
+  color: #00adb5;
+  transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+  transition: color 0.3s ease, transform 0.3s ease; /* Suaviza la transición de los efectos */
+}
+
+/* Responsividad */
+@media (min-width: 769px) {
+  .footer .container {
+      flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer .container,
+  .footer-section {
+      flex-direction: column;
+      text-align: center;
+  }
+  
+  .footer-social {
+      justify-content: center; /* Asegura que los iconos estén centrados en dispositivos móviles */
+      margin-top: 1rem; /* Añade espacio arriba de los iconos en vista móvil */
+  }
+}
+
+/* Información de derechos de autor y atribuciones */
+.footer-copy {
+  border-top: 1px solid #404040;
+  padding-top: 1rem;
+  text-align: center; /* Centra el texto de derechos de autor */
+  margin-top: 2rem; /* Añade espacio antes de la sección de derechos de autor */
+}
+
+/* Estilos para enlaces en el footer */
+a.footer-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a.footer-link:hover {
+  color: #00adb5;
+}

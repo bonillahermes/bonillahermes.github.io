@@ -23,12 +23,12 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"/>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesservice.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
 
-    <script src="script.js"></script>
+    <script src="scriptservice.js"></script>
     <script src="https://kit.fontawesome.com/b5b69dd3f6.js" crossorigin="anonymous"></script>
 
     <!-- Google tag (gtag.js) -->
@@ -54,6 +54,7 @@
     <!-- Js count to -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.appear/0.4.1/jquery.appear.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countto/1.2.0/jquery.countTo.min.js"></script>
+    <span class="counter" data-to="1000" data-speed="2000">0</span>
 
     <!-- Slick Slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
@@ -131,116 +132,95 @@
     </div>
 </div>
 
-<!-- Carrusel -->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <!-- Indicadores del carrusel -->
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-        <!-- Primer Banner -->
-        <div class="carousel-item active">
-            <img src="images/carrusel1.png" alt="Ciencia de Datos" />
-            <div class="carousel-caption d-md-block text_banner">
-                <h5 data-tag="H_banner_One_T" class="text-left">Transformando Datos en Decisiones Inteligentes</h5>
-                <p data-tag="H_banner_One_S" class="text-left">Descubre cómo nuestra ciencia de datos impulsa el crecimiento del negocio</p>
+<!-- Servicios -->
+
+    <main>
+
+    <!-- Inteligencia Artificial -->
+        <section id="ai" class="service-section" data-aos="fade-up">
+            <div class="description">
+                <h2>Transforma tu Negocio con IA</h2>
+                <p>Automatiza procesos y potencia el análisis avanzado con nuestras soluciones de inteligencia artificial. Descubre cómo podemos ayudarte a mejorar la toma de decisiones y optimizar tus operaciones.</p>
+                <a href="#" class="cta">Explora más</a>
             </div>
-        </div>
-        <!-- Segundo Banner -->
-        <div class="carousel-item">
-            <img src="images/carrusel2.png" alt="Inteligencia Artificial" />
-            <div class="carousel-caption d-md-block text_banner">
-                <h5 data-tag="H_banner_Two_T" class="text-left">Innovación con Inteligencia Artificial</h5>
-                <p data-tag="H_banner_Two_S" class="text-left">Implementa soluciones de IA que crean valor real y sostenible</p>
+            <div class="image js-tilt">
+                <img src="images/service/AI.png" alt="Inteligencia Artificial aplicada">
             </div>
-        </div>
-        <!-- Tercer Banner -->
-        <div class="carousel-item">
-            <img src="images/carrusel3.png" alt="Consultoría Estadística" />
-            <div class="carousel-caption d-md-block text_banner">
-                <h5 data-tag="H_banner_Three_T" class="text-left">Consultoría Estadística Experta</h5>
-                <p data-tag="H_banner_Three_S" class="text-left">Soluciones estadísticas precisas para desafíos complejos</p>
+        </section>
+        <!-- Análisis Predictivo -->
+        <section id="predictive-analysis" class="service-section alt-layout" data-aos="fade-up">
+            <div class="description">
+                <h2>Anticipa el Futuro con Análisis Predictivo</h2>
+                <p>Descubre patrones y proyecta tendencias futuras. Nuestros modelos predictivos son la clave para tomar decisiones estratégicas informadas y mantener a tu empresa un paso adelante.</p>
+                <a href="#" class="cta">Conoce más</a>
             </div>
-        </div>
-    </div>
-    <!-- Controles del carrusel -->
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-</div>
-
-<div id="contactModal" style="display: none;">
-    <h2>Contacto</h2>
-    <form id="contactForm">
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Mensaje:</label>
-        <textarea id="message" name="message" required></textarea>
-
-        <button type="submit">Enviar</button>
-    </form>
-</div>
-
-
-
-<!-- Testimonios -->
-<div class="testimonials-section mt-0 md-mt-100" id="testimonials">
-    <div class="container">
-        <div class="title-style-six">
-            <h2>Testimonios</h2>
-        </div>
-    </div>
-
-    <!-- Slider de Testimonios -->
-    <div class="testimonialsSlider pt-120 md-pt-70">
-        <!-- Testimonio sobre Salud -->
-        <div class="item">
-            <div class="testimonial-item">
-                <p>"Implementando IA en nuestros historiales clínicos, hemos mejorado significativamente la precisión diagnóstica y optimizado el tratamiento de nuestros pacientes. Un cambio revolucionario para nuestra práctica médica."</p>
-                <h4>Dr. Alex Mendez</h4>
-                <span>Director Médico, Hospital General</span>
+            <div class="image js-tilt">
+                <img src="images/service/predictivo.png" alt="Diagrama de análisis predictivo">
             </div>
-        </div>
-        <!-- Testimonio sobre Política -->
-        <div class="item">
-            <div class="testimonial-item">
-                <p>"La analítica avanzada para las elecciones locales nos proporcionó insights críticos que guiaron nuestra campaña hacia el éxito. La capacidad de prever tendencias y adaptar estrategias en tiempo real fue invaluable."</p>
-                <h4>Laura Jiménez</h4>
-                <span>Estratega Política, Campaña Local</span>
+        </section>
+      
+        <!-- Visualización de Datos -->
+        <section id="data-visualization" class="service-section" data-aos="fade-up">
+            <div class="description">
+                <h2>Historias Contadas por Datos</h2>
+                <p>Transformamos datos crudos en dashboards e historias visuales claras. Nuestras visualizaciones son herramientas poderosas para comunicar insights complejos de manera efectiva.</p>
+                <a href="#" class="cta">Explora nuestras soluciones</a>
             </div>
-        </div>
-        <!-- Testimonio sobre Economía -->
-        <div class="item">
-            <div class="testimonial-item">
-                <p>"Gracias a los modelos de machine learning para análisis de ventas, hemos visto un aumento significativo en nuestra rentabilidad. Identificar patrones y adaptar nuestras estrategias nunca había sido tan eficaz."</p>
-                <h4>Carlos Ruiz</h4>
-                <span>CEO, Innovaciones Digitales</span>
+            <div class="image js-tilt">
+                <img src="images/service/visual.png" alt="Visualización de datos">
             </div>
-        </div>
-        <!-- Invitación a ser parte de la historia -->
-        <div class="item">
-            <div class="testimonial-item">
-                <p>"Déjanos ser parte de tu gran historia. Con nuestra experiencia en IA y análisis de datos, el próximo testimonio de éxito podría ser el tuyo."</p>
-                <h4>Equipo Hermes Bonilla</h4>
-                <span>Transformando Ideas en Soluciones</span>
+        </section>
+      
+        <!-- Minería de Datos -->
+        <section id="data-mining" class="service-section alt-layout" data-aos="fade-up">
+            <div class="description">
+                <h2>Descubre Insights con Minería de Datos</h2>
+                <p>Profundiza en tus datos para revelar conexiones ocultas y oportunidades de crecimiento. Nuestra minería de datos es la herramienta que necesitas para informar decisiones estratégicas.</p>
+                <a href="#" class="cta">Aprende más</a>
             </div>
-        </div>
-    </div>
-</div>
-
-
-
+            <div class="image js-tilt">
+                <img src="images/service/mining.png" alt="Herramientas de minería de datos">
+            </div>
+        </section>
+      
+        <!-- Machine Learning y Desarrollo de Modelos -->
+        <section id="machine-learning" class="service-section" data-aos="fade-up">
+            <div class="description">
+                <h2>Innovación con Machine Learning</h2>
+                <p>Nuestros modelos de aprendizaje automático se adaptan y mejoran con tus datos, automatizando procesos y descubriendo conocimientos para impulsar la eficiencia y la innovación.</p>
+                <a href="#" class="cta">Descubre cómo</a>
+            </div>
+            <div class="image js-tilt">
+                <img src="images/service/machine.png" alt="Proceso de Machine Learning" data-aos="fade-up">
+            </div>
+        </section>
+      
+        <!-- Computación en la Nube -->
+        <section id="cloud-computing" class="service-section alt-layout" data-aos="fade-up">
+            <div class="description">
+                <h2>Escalabilidad con la Nube</h2>
+                <p>Moderniza tu infraestructura TI con soluciones de nube que garantizan escalabilidad, seguridad y eficiencia. Nuestra estrategia de nube personalizada es la clave para tu crecimiento.</p>
+                <a href="#" class="cta">Explora la nube</a>
+            </div>
+            <div class="image js-tilt">
+                <img src="images/service/cloud.png" alt="Infraestructura de computación en la nube">
+            </div>
+        </section>
+      
+        <!-- Consultoría en Ciencia de Datos -->
+        <section id="data-consulting" class="service-section" data-aos="fade-up">
+            <div class="description">
+                <h2>Consultoría Experta en Datos</h2>
+                <p>Maximiza el valor de tus datos con nuestra consultoría experta. Te acompañamos desde la estrategia hasta la implementación para que puedas innovar y competir eficazmente.</p>
+                <a href="#" class="cta">Inicia la transformación</a>
+            </div>
+            <div class="image js-tilt">
+                <img src="images/service/consulting.png" alt="Consultoría en Ciencia de Datos">
+            </div>
+        </section>
+      </main>
+      
+  
 <!-- Footer -->
 <footer class="footer">
     <div class="container">
@@ -308,6 +288,6 @@
     </div>
 </footer>
 
+    <script src="scripts.js"></script>
 </body>
 </html>
-

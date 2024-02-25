@@ -1,66 +1,79 @@
 /* styles.css */
 
+/* Variables CSS */
+:root {
+    --primary-color: #007aff; 
+    --text-color: #333;
+    --background-color-page: #faf7f7; /* Color de fondo de la página en general */
+    --gradient-start: #272424; /* Gris oscuro para el inicio del degradado */
+    --gradient-end: #2c2929; /* Gris claro para el final del degradado */
+    --background-color-section: #ffffff; /* Color de fondo para las secciones de servicios */
+    --background-color-section-alt: #e6e6e6; /* Color de fondo alternativo para secciones */
+    --cta-color: #007aff; /* Color del botón CTA */
+    --cta-hover-color: #005ecb;
+    --font-family: 'Helvetica Neue', 'Roboto', sans-serif;
+  }
+
 /* Reset básico y estilos del cuerpo del documento */
-body {
+/* Reset básico y estilos de fuente */
+body, html {
     margin: 0;
-    font-family: 'Open Sans', Arial, sans-serif;
-    background-color: #f5f5f5; /* Fondo claro para el cuerpo */
-    color: #333; /* Color de texto general en escala de grises */
-}
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background: linear-gradient(var(--gradient-start), var(--gradient-end)); /* Declaración del degradado */
+  }
 
 /* Estilos de la barra de navegación principal */
 .theme-main-menu {
-    background: linear-gradient(to right, rgba(45, 45, 45, 0.8), rgba(26, 26, 26, 0.8)); /* Degradado de gris oscuro con transparencia */
+    background: linear-gradient(to right, rgba(45, 45, 45, 0.8), rgba(26, 26, 26, 0.8));
     background-color: black;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
     z-index: 1000;
     display: flex;
-    align-items: center; /* Alinea elementos internos verticalmente */
-    height: 150px; /* Altura optimizada para la barra de navegación */
-    justify-content: center; 
-    padding: 0 30px; /* Agrega un poco de padding en los lados */
-    transition: height 0.3s ease; /* Agrega una transición suave a la propiedad height */
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+    transition: height 0.3s ease;
 }
 
-/* Centrado de elementos dentro de la barra de navegación */
 .theme-main-menu .nav-container {
     display: flex;
     flex-grow: 1;
-    justify-content: center; /* según donde quieras que estén tus enlaces */
-    align-items: center; /* Alinea elementos internos verticalmente */
-    width: 100%; /* Asume todo el ancho disponible */
-    padding: 0 15px; /* Ajusta el padding como sea necesario */
-}
-
-/* Navegación */
-.theme-main-menu .navbar {
-    flex: 1 0 100%;
-    justify-content: center; /* Centra la navegación en el espacio restante */
-    order: 2; /* Asegura que la navegación siga al logo */
-    flex-grow: 1; /* Permite que la barra de navegación crezca para llenar el espacio disponible */
-}
-
-.theme-main-menu .navbar {
-    flex: 1; /* Permite que la barra de navegación crezca para llenar el espacio disponible */
-    justify-content: center; /* Centra la navegación en el espacio restante */
-}
-
-.theme-main-menu .nav-item {
-    padding: 0 10px; /* Espaciado horizontal entre elementos de la lista */
-}
-
-.flex-grow-1.d-flex.justify-content-center {
-    flex-grow: 1;
-}
-
-.navbar-nav {
-    list-style-type: none;
-    display: flex;
+    justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 0;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.theme-main-menu .navbar {
+    flex: 1;
+    justify-content: center;
+}
+
+.navbar-toggler {
+    display: block; /* Se muestra en dispositivos móviles */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px; /* Tamaño aumentado para mejor accesibilidad */
+    cursor: pointer;
+}
+
+.theme-main-menu .logo {
+    flex: 0 0 auto;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: auto;
+    order: 1;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
 }
 
 .nav-item {
@@ -74,42 +87,10 @@ body {
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: #00adb5; /* al pasar el mouse */
+    color: #007bff;
+    text-decoration: underline;
 }
 
-/* Botón del menú para dispositivos móviles */
-.navbar-toggler {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none; /* Oculto en dispositivos de escritorio */
-}
-
-.navbar-nav.main-side-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Puede que necesites ajustar esto según tus necesidades */
-}
-
-/* Logo */
-.theme-main-menu .logo {
-    flex: 0 0 auto; /* Asegura que el logo no se expanda y se ajuste a su contenido */
-    text-align: left;
-    margin-left: 20px; /* Ajusta este valor según necesites para añadir espacio a la izquierda */
-    margin-right: auto; /* Mantiene los elementos siguientes a la derecha */
-    order: 1; /* Mantiene el logo al inicio, aunque esto puede ser innecesario si ya es el primer elemento */
-}
-
-.logo img {
-    height: 60px; /* Altura fija para el logo */
-    width: auto; /* Ancho automático para mantener la proporción */
-}
-
-
-/* Botones de idioma */
 .language-button-group {
     display: flex;
     align-items: center;
@@ -117,50 +98,53 @@ body {
 
 .language-button-group li {
     margin-right: 15px;
-    cursor: pointer; /* Indica que los elementos son clicables */
-}
-
-.language-button-group li:last-child {
-    margin-right: 0;
+    cursor: pointer;
 }
 
 .language-button-group img {
-    height: 20px; /* Ajusta el tamaño según sea necesario */
-    transition: transform 0.3s ease; /* Animación suave para el efecto de hover */
+    height: 20px;
+    transition: transform 0.3s ease;
 }
 
 .language-button-group img:hover {
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+    transform: scale(1.1);
 }
 
-
-/* Estilos responsivos para dispositivos móviles */
 @media (max-width: 768px) {
     .theme-main-menu {
-        height: auto; /* Altura automática en dispositivos móviles */
+        height: auto; /* Altura ajustada */
+        padding: 10px 15px; /* Padding reducido */
     }
     
-    .theme-main-menu .logo {
-        margin-left: 0; /* El logo puede estar alineado al borde en dispositivos móviles */
+    .theme-main-menu .logo img {
+        height: 40px; /* Logo más pequeño */
     }
     
     .navbar-toggler {
-        display: block; /* Asegúrate de que el botón de menú se muestre en móviles */
+        display: flex;
+        justify-content: flex-end; /* Alinea el botón a la derecha */
     }
     
-    .navbar-collapse.collapse.show {
-        display: block;
+    .navbar-collapse.collapse.show, .navbar-collapse.collapse {
+        display: flex;
+        flex-direction: column; /* Menú en formato vertical */
     }
 
     .navbar-nav {
         flex-direction: column;
-        align-items: center;
+        width: 100%; /* Uso completo del ancho */
     }
 
     .nav-item {
-        padding: 0.5rem 0;
+        padding: 8px 0; /* Espaciado vertical entre elementos */
+    }
+
+    .theme-main-menu .logo {
+        margin: 0 auto; /* Centra el logo */
+        flex-grow: 1; /* Permite al logo ajustarse */
     }
 }
+
 
 
 /* Estilos del carrusel*/
@@ -296,6 +280,133 @@ body {
 .carousel-control-next-icon {
     background: #333; /* Fondo para la flecha derecha */
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="16" height="16" fill="%23fff"><path d="M2 0v3h5V0H2zm0 5v3h5V5H2z"/></svg>'); /* Flecha derecha de Font Awesome */
+}
+
+
+/* Estilos Generales para la Sección de Testimonios */
+.testimonials-section {
+    background: #ffffff; /* Fondo blanco */
+    padding: 80px 0; /* Espaciado generoso para un diseño aireado */
+    font-family: var(--font-family); /* Tipografía moderna y limpia */
+    color: var(--text-color); /* Color del texto basado en la variable */
+}
+
+.title-style-six {
+    text-align: center; /* Centra el título en la sección */
+    margin-bottom: 1em; /* Espacio debajo del título para separarlo del contenido que sigue */
+}
+
+.title-style-six h2 {
+    font-size: 2.5em; /* Tamaño grande del título para destacar */
+    color: var(--primary-color); /* Utiliza el color primario definido en las variables CSS */
+    font-weight: bold; /* Hace que el título sea negrita para mayor énfasis */
+    margin-bottom: 0.5em; /* Espacio debajo del título para separarlo del contenido que sigue */
+    padding: 0 1em; /* Añade un poco de padding a los lados para manejar los textos largos en pantallas pequeñas */
+}
+
+/* Estilos para el Slider de Testimonios */
+.testimonialsSlider .item {
+    padding: 15px;
+    margin: 0 10px;
+}
+
+.testimonial-item {
+    background-color: var(--background-color-section);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Asegura transiciones suaves */
+    opacity: 0.8; /* Los testimonios no centrales son ligeramente transparentes */
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.testimonial-item p {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5em;
+}
+
+.testimonial-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.25em;
+}
+
+.testimonial-item span {
+    color: var(--text-color);
+    font-size: 0.85rem;
+}
+
+/* Estilos para Encabezados dentro de Testimonios */
+.testimonials-section h2 {
+    color: var(--text-color);
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+  
+  /* Estilos para Párrafos dentro de Testimonios */
+  .testimonials-section p {
+    color: var(--text-color); /* Mejor contraste con un fondo oscuro */
+    margin-bottom: 1em;
+  }
+  
+  /* Ajuste para nombres y cargos en Testimonios */
+  .testimonials-section .testimonial-item h4 {
+    color: var(--primary-color); /* Uso del color primario para nombres */
+  }
+  
+  .testimonials-section .testimonial-item span {
+    color: var(--text-color); /* Un gris claro para los cargos/empresas */
+  }
+
+  .testimonialsSlider .slick-center .testimonial-item {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño del testimonio central */
+    opacity: 1; /* Asegura que el testimonio central sea totalmente opaco */
+}
+
+/* Asegurándose de que Slick Slider no estire los slides no centrales */
+.slick-track {
+    display: flex;
+}
+
+.slick-slide {
+    height: auto; /* Esto permite que los slides tengan su altura natural */
+}
+
+  /* Estilos para los botones de navegación del carrusel */
+.slick-dots li button:before, .slick-prev:before, .slick-next:before {
+    color: var(--primary-color);
+}
+
+.slick-dots li.slick-active button:before {
+    color: var(--cta-color);
+}
+
+.slider-arrows div {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+}
+
+/* Ajuste para la responsividad */
+@media (max-width: 768px) {
+    .testimonialsSlider .item {
+        margin: 0 5px;
+    }
+
+    .testimonial-item {
+        padding: 20px;
+    }
+
+    .testimonialsSlider .slick-slide {
+        transform: scale(1); /* En pantallas pequeñas, no escalamos los slides */
+    }
 }
 
 /* Estilos del footer */
