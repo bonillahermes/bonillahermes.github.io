@@ -54,17 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // jQuery CountTo para contadores
-    $('.counter').countTo({
-        from: 0,
-        to: 1000,
-        speed: 2000,
-        refreshInterval: 50,
-        formatter: (value, options) => value.toFixed(options.decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ','),
-        onUpdate: (value) => console.log('El contador se ha actualizado a: ' + value),
-        onComplete: (value) => console.log('La animación del contador ha finalizado con el valor: ' + value)
-    });
-
     // Tilt.js para efectos de inclinación
     $('.js-tilt').tilt({
         maxTilt: 20,
@@ -78,6 +67,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Funcionalidades específicas
+
+      // Ajustar títulos y subtítulos de elementos del carrusel
+  document.querySelectorAll('.carousel-item').forEach((item, index) => {
+    const title = item.querySelector('h5');
+    const subtitle = item.querySelector('p');
+    title.textContent = titles[index];
+    subtitle.textContent = subtitles[index];
+});
 
     // Toggle para la barra de navegación en dispositivos móviles
     const menuToggle = document.getElementById('menu-toggle');

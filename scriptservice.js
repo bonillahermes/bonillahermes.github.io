@@ -130,28 +130,6 @@ $('[data-fancybox="gallery"]').fancybox({
   }
 });
 
-
-$('.counter').countTo({
-  from: 0, // El número inicial desde el cual comienza la animación.
-  to: 1000, // El número final al que quieres que el contador llegue.
-  speed: 2000, // La velocidad de la animación en milisegundos.
-  refreshInterval: 50, // El intervalo de tiempo en el que se actualiza el contador.
-  formatter: function (value, options) {
-    // Formatea el valor del contador mientras se anima.
-    // Puedes retornar un string formateado. Por ejemplo, añadiendo comas:
-    return value.toFixed(options.decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  },
-  onUpdate: function (value) {
-    // Función de callback que se ejecuta en cada actualización del contador.
-    console.log('El contador se ha actualizado a: ' + value);
-  },
-  onComplete: function (value) {
-    // Función de callback que se ejecuta cuando la animación se completa.
-    console.log('La animación del contador ha finalizado con el valor: ' + value);
-  }
-});
-
-
 $('.js-tilt').tilt({
   maxTilt: 20, // Máximo ángulo de inclinación (grados).
   perspective: 1000, // Distancia de la perspectiva en px, afecta la profundidad del efecto.
@@ -171,17 +149,6 @@ $('.js-tilt').tilt({
   gyroscopeMaxAngleY: 45, // Máximo ángulo en Y para el efecto.
 });
 
-
-  // Carga la configuración de internacionalización si es necesario
-  load();
-
-  // Ajustar títulos y subtítulos de elementos del carrusel
-  document.querySelectorAll('.carousel-item').forEach((item, index) => {
-      const title = item.querySelector('h5');
-      const subtitle = item.querySelector('p');
-      title.textContent = titles[index];
-      subtitle.textContent = subtitles[index];
-  });
 });
 
 // Ajustes de navegación y efectos visuales que dependen del scroll
@@ -201,23 +168,6 @@ window.addEventListener('scroll', function() {
       navbar.style.background = `linear-gradient(to right, ${backgroundColor}, ${backgroundColor})`;
 });
 
-function showNextIconSlide() {
-  // ... Código para mostrar el siguiente slide de iconos
-}
 
-function load() {
-  // ... Código para cargar la configuración de internacionalización
-}
-
-function setLanguage(lang) {
-  // ... Código para establecer el idioma y recargar la configuración
-}
-
-function setBlog(id) {
-  // ... Código para ajustar la configuración del blog
-}
-
-// Asegúrate de que cualquier otra función que se llame esté definida correctamente
-// Por ejemplo: showSlide(), autoPlayCarousel(), showCaptionProgressively(), etc.
 
   
