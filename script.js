@@ -86,42 +86,22 @@ document.addEventListener('DOMContentLoaded', function() {
         navbar.classList.toggle('active');
     });
 
-    // Funcionalidad del carrusel
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.hero-slide');
-    const totalSlides = slides.length;
-    const heroCarousel = document.querySelector('.hero-carousel');
-
-    function showSlide(index) {
-        index = (index + totalSlides) % totalSlides; // Manejo circular de índices
-        heroCarousel.style.transform = `translateX(${-index * 100}%)`;
-        currentSlide = index;
-    }
-
     // Event listeners para los botones de navegación del carrusel
-    document.querySelector('.carousel-control.prev').addEventListener('click', () => showSlide(currentSlide - 1));
-    document.querySelector('.carousel-control.next').addEventListener('click', () => showSlide(currentSlide + 1));
-
-    // Inicializa el carrusel en el primer slide
-    showSlide(currentSlide);
-
-    // Opcional: Función para automatizar el carrusel
-    function autoPlayCarousel() {
-        showSlide(currentSlide + 1);
+    const prevButton = document.querySelector('.carousel-control.prev');
+    const nextButton = document.querySelector('.carousel-control.next');
+    
+    if (prevButton) {
+        prevButton.addEventListener('click', () => showSlide(currentSlide - 1));
     }
-
-    // Inicia el carrusel automático con un intervalo de 5 segundos
-    let playInterval = setInterval(autoPlayCarousel, 5000);
-
-    // Opcional: Event listeners para pausar/reanudar el carrusel automático
-    document.querySelector('.hero-carousel').addEventListener('mouseenter', () => clearInterval(playInterval));
-    document.querySelector('.hero-carousel').addEventListener('mouseleave', () => playInterval = setInterval(autoPlayCarousel, 5000));
+    if (nextButton) {
+        nextButton.addEventListener('click', () => showSlide(currentSlide + 1));
+    }
 
 });
 
 // Ajustes de navegación y efectos visuales que dependen del scroll
     // Escucha el evento de scroll y ajusta la altura de la barra de navegación
-window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function() {
         const navbar = document.getElementById('navbar');
         if (window.scrollY > 0) {
             navbar.style.height = '90px'; // Cambia la altura al hacer scroll
@@ -129,12 +109,13 @@ window.addEventListener('scroll', function() {
             navbar.style.height = '150px'; // Restaura la altura inicial cuando se encuentra en la parte superior
         }
     
-     // Ajusta la opacidad basada en la altura
+        // Ajusta la opacidad basada en la altura
         const maxOpacityScroll = 100; // Puedes ajustar esto según tu preferencia
-        const opacity = Math.min(1, scrollPosition / maxOpacityScroll);
+        const opacity = Math.min(1, window.scrollY / maxOpacityScroll);
         const backgroundColor = `rgba(45, 45, 45, ${0.8 * (1 - opacity)})`;
         navbar.style.background = `linear-gradient(to right, ${backgroundColor}, ${backgroundColor})`;
-});
+    });
+    
 
 // Carrusel de iconos con tiempo de intervalo
 const intervalTime = 3000;
@@ -142,9 +123,15 @@ const iconSlides = document.getElementsByClassName('carousel-icon-slide');
 let currentIconSlide = 0;
 
 function showNextIconSlide() {
-    iconSlides[currentIconSlide].classList.remove('active');
+    if (iconSlides[currentIconSlide]) {
+        iconSlides[currentIconSlide].classList.remove('active');
+    }
+    
     currentIconSlide = (currentIconSlide + 1) % iconSlides.length;
-    iconSlides[currentIconSlide].classList.add('active');
+
+    if (iconSlides[currentIconSlide]) {
+        iconSlides[currentIconSlide].classList.add('active');
+    }
 }
 
 // Iniciar el carrusel automáticamente
@@ -158,17 +145,6 @@ document.querySelectorAll('.nav-item').forEach(item => {
 });
 
 // Funciones relacionadas con la internacionalización y carga de contenido
-function load() {
-    const translate = new Translate();
-    const attributeName = "data-tag";
-    translate.init(attributeName, localStorage.getItem("language") || "en");
-    translate.process();
-}
-
-function setLanguage(lang) {
-    localStorage.setItem("language", lang);
-    load();
-}
 
 function setBlog(id) {
     localStorage.setItem("blog-id", id);

@@ -1,20 +1,16 @@
 /* styles.css */
-
+/* Reset básico y estilos del cuerpo del documento */
 /* Variables CSS */
 :root {
     --primary-color: #007aff; 
     --text-color: #333;
-    --background-color-page: #faf7f7; /* Color de fondo de la página en general */
-    --gradient-start: #272424; /* Gris oscuro para el inicio del degradado */
-    --gradient-end: #2c2929; /* Gris claro para el final del degradado */
+    --background-color-page: #f7f6f6; /* Color de fondo de la página en general */
     --background-color-section: #ffffff; /* Color de fondo para las secciones de servicios */
-    --background-color-section-alt: #e6e6e6; /* Color de fondo alternativo para secciones */
+    --background-color-section-alt: #464343; /* Color de fondo alternativo para secciones */
     --cta-color: #007aff; /* Color del botón CTA */
     --cta-hover-color: #005ecb;
     --font-family: 'Helvetica Neue', 'Roboto', sans-serif;
   }
-
-/* Reset básico y estilos del cuerpo del documento */
 /* Reset básico y estilos de fuente */
 body, html {
     margin: 0;
@@ -24,128 +20,137 @@ body, html {
     color: var(--text-color);
     background: linear-gradient(var(--gradient-start), var(--gradient-end)); /* Declaración del degradado */
   }
+  
+
+/*Barra de navegación*/
 
 /* Estilos de la barra de navegación principal */
 .theme-main-menu {
-    background: linear-gradient(to right, rgba(45, 45, 45, 0.8), rgba(26, 26, 26, 0.8));
+    background: linear-gradient(to right, rgba(45, 45, 45, 0.8), rgba(26, 26, 26, 0.8)); /* Degradado de gris oscuro con transparencia */
     background-color: black;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
     z-index: 1000;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 30px;
-    transition: height 0.3s ease;
-}
-
-.theme-main-menu .nav-container {
+    align-items: center; /* Alinea elementos internos verticalmente */
+    height: 150px; /* Altura optimizada para la barra de navegación */
+    justify-content: center; 
+    padding: 0 30px; /* Agrega un poco de padding en los lados */
+    transition: height 0.3s ease; /* Agrega una transición suave a la propiedad height */
+  }
+  
+  /* Centrado de elementos dentro de la barra de navegación */
+  .theme-main-menu .nav-container {
     display: flex;
     flex-grow: 1;
-    justify-content: center;
+    justify-content: center; /* según donde quieras que estén tus enlaces */
+    align-items: center; /* Alinea elementos internos verticalmente */
+    width: 100%; /* Asume todo el ancho disponible */
+    padding: 0 15px; /* Ajusta el padding como sea necesario */
+  }
+  
+  /* Navegación */
+  .theme-main-menu .navbar {
+    flex: 1 0 100%;
+    justify-content: center; /* Centra la navegación en el espacio restante */
+    order: 2; /* Asegura que la navegación siga al logo */
+    flex-grow: 1; /* Permite que la barra de navegación crezca para llenar el espacio disponible */
+  }
+  
+  .theme-main-menu .navbar {
+    flex: 1; /* Permite que la barra de navegación crezca para llenar el espacio disponible */
+    justify-content: center; /* Centra la navegación en el espacio restante */
+  }
+  
+  .theme-main-menu .nav-item {
+    padding: 0 10px; /* Espaciado horizontal entre elementos de la lista */
+  }
+  
+  .flex-grow-1.d-flex.justify-content-center {
+    flex-grow: 1;
+  }
+  
+  .navbar-nav {
+    list-style-type: none;
+    display: flex;
     align-items: center;
-    width: 100%;
-    padding: 0 15px;
-}
-
-.theme-main-menu .navbar {
-    flex: 1;
-    justify-content: center;
-}
-
-.navbar-toggler {
-    display: block; /* Se muestra en dispositivos móviles */
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px; /* Tamaño aumentado para mejor accesibilidad */
-    cursor: pointer;
-}
-
-.theme-main-menu .logo {
-    flex: 0 0 auto;
-    text-align: left;
-    margin-left: 20px;
-    margin-right: auto;
-    order: 1;
-}
-
-.logo img {
-    height: 60px;
-    width: auto;
-}
-
-.nav-item {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
     margin: 0 1rem;
-}
-
-.nav-link {
+  }
+  
+  .nav-link {
     color: #ffffff;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
-}
-
-.nav-link:hover, .nav-link:focus {
-    color: #007bff;
-    text-decoration: underline;
-}
-
-.language-button-group {
-    display: flex;
-    align-items: center;
-}
-
-.language-button-group li {
-    margin-right: 15px;
+  }
+  
+  .nav-link:hover, .nav-link:focus {
+    color: #00adb5; /* al pasar el mouse */
+  }
+  
+  /* Botón del menú para dispositivos móviles */
+  .navbar-toggler {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
     cursor: pointer;
-}
-
-.language-button-group img {
-    height: 20px;
-    transition: transform 0.3s ease;
-}
-
-.language-button-group img:hover {
-    transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
+    display: none; /* Oculto en dispositivos de escritorio */
+  }
+  
+  .navbar-nav.main-side-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Puede que necesites ajustar esto según tus necesidades */
+  }
+  
+  /* Logo */
+  .theme-main-menu .logo {
+    flex: 0 0 auto; /* Asegura que el logo no se expanda y se ajuste a su contenido */
+    text-align: left;
+    margin-left: 20px; /* Ajusta este valor según necesites para añadir espacio a la izquierda */
+    margin-right: auto; /* Mantiene los elementos siguientes a la derecha */
+    order: 1; /* Mantiene el logo al inicio, aunque esto puede ser innecesario si ya es el primer elemento */
+  }
+  
+  .logo img {
+    height: 60px; /* Altura fija para el logo */
+    width: auto; /* Ancho automático para mantener la proporción */
+  }
+  
+  /* Estilos responsivos para dispositivos móviles */
+  @media (max-width: 768px) {
     .theme-main-menu {
-        height: auto; /* Altura ajustada */
-        padding: 10px 15px; /* Padding reducido */
+        height: auto; /* Altura automática en dispositivos móviles */
     }
     
-    .theme-main-menu .logo img {
-        height: 40px; /* Logo más pequeño */
+    .theme-main-menu .logo {
+        margin-left: 0; /* El logo puede estar alineado al borde en dispositivos móviles */
     }
     
     .navbar-toggler {
-        display: flex;
-        justify-content: flex-end; /* Alinea el botón a la derecha */
+        display: block; /* Asegúrate de que el botón de menú se muestre en móviles */
     }
     
-    .navbar-collapse.collapse.show, .navbar-collapse.collapse {
-        display: flex;
-        flex-direction: column; /* Menú en formato vertical */
+    .navbar-collapse.collapse.show {
+        display: block;
     }
-
+  
     .navbar-nav {
         flex-direction: column;
-        width: 100%; /* Uso completo del ancho */
+        align-items: center;
     }
-
+  
     .nav-item {
-        padding: 8px 0; /* Espaciado vertical entre elementos */
+        padding: 0.5rem 0;
     }
-
-    .theme-main-menu .logo {
-        margin: 0 auto; /* Centra el logo */
-        flex-grow: 1; /* Permite al logo ajustarse */
-    }
-}
-
-
+  }
 
 /* Estilos del carrusel*/
 .carousel {

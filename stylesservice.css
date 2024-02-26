@@ -123,32 +123,6 @@ body, html {
   width: auto; /* Ancho automático para mantener la proporción */
 }
 
-
-/* Botones de idioma */
-.language-button-group {
-  display: flex;
-  align-items: center;
-}
-
-.language-button-group li {
-  margin-right: 15px;
-  cursor: pointer; /* Indica que los elementos son clicables */
-}
-
-.language-button-group li:last-child {
-  margin-right: 0;
-}
-
-.language-button-group img {
-  height: 20px; /* Ajusta el tamaño según sea necesario */
-  transition: transform 0.3s ease; /* Animación suave para el efecto de hover */
-}
-
-.language-button-group img:hover {
-  transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
-}
-
-
 /* Estilos responsivos para dispositivos móviles */
 @media (max-width: 768px) {
   .theme-main-menu {
@@ -176,6 +150,7 @@ body, html {
       padding: 0.5rem 0;
   }
 }
+
 
 /* Estilos del encabezado */
 header {
@@ -347,18 +322,23 @@ main {
   margin-top: 20px;
   border-radius: 5px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Agrega transform y box-shadow a la transición */
   font-size: 1em; /* Ajusta según necesidad */
-  padding: 10px 20px; /* Relleno alrededor del texto */
   background-color: var(--primary-color); /* Usa una variable o un color que destaque */
   color: #ffffff; /* Texto claro para contraste */
   border: none; /* Remueve el borde si existe */
   cursor: pointer; /* Cambia el cursor a una mano para indicar interactividad */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra inicial sutil */
 }
 
 .cta:hover {
-  background-color: var(--cta-hover-color);
+  background-color: var(--cta-hover-color); /* Cambia el color de fondo al pasar el mouse */
+  color: #ffffff; /* Texto claro para contraste */
+  text-decoration: none;
+  transform: translateY(-3px) scale(1.05); /* Eleva ligeramente el botón y lo hace crecer */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra más prominente para dar la sensación de elevación */
 }
+
 
 /* Estilos de responsividad */
 @media (max-width: 768px) {

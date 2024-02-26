@@ -69,7 +69,7 @@
     
 </head>
 
-<body onload="load()" data-spy="scroll" data-target="#one-page-nav" data-offset="120">
+<body data-spy="scroll" data-target="#one-page-nav" data-offset="120">
 
 <!-- Barra de navegación -->
 <div class="theme-main-menu sticky-menu theme-menu-five" id="navbar">
@@ -81,7 +81,7 @@
         <nav id="mega-menu-holder" class="navbar navbar-expand-lg">
             <div class="container nav-container">
                 <!-- Botón para menú en móviles -->
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button id="menu-toggle" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="flaticon-menu-of-three-lines"></i>
                 </button>
                 <!-- Contenedor  de navegación -->
@@ -108,20 +108,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="https://www.linkedin.com/in/bonillahermes/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                </li>
-                                <!-- Botones de idioma -->
-                                <li class="d-sm-flex">
-                                    <ul class="language-button-group d-flex align-items-center justify-content-center">
-                                        <li class="lenguaje">
-                                            <!-- Cambiar el idioma a inglés -->
-                                            <img src="images/en.png" alt="English" onclick="setLanguage('en')" style="cursor: pointer;" />
-                                        </li>
-                                        <li class="lenguaje">
-                                            <!-- Cambiar el idioma a español -->
-                                            <img src="images/es.png" alt="Español" onclick="setLanguage('es')" style="cursor: pointer;" />
-                                        </li>
-                                    </ul>
-                                </li>                                                      
+                                </li>                                             
                             </ul>
                         </nav>
                     </div>
@@ -130,6 +117,7 @@
         </nav>
     </div>
 </div>
+
 
 <!-- Carrusel -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -175,23 +163,6 @@
       <span class="sr-only">Next</span>
     </a>
 </div>
-
-<div id="contactModal" style="display: none;">
-    <h2>Contacto</h2>
-    <form id="contactForm">
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Mensaje:</label>
-        <textarea id="message" name="message" required></textarea>
-
-        <button type="submit">Enviar</button>
-    </form>
-</div>
-
 
 
 <!-- Testimonios -->
