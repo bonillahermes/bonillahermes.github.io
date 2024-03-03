@@ -109,8 +109,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Ajusta la opacidad basada en la altura
         const maxOpacityScroll = 100; // Puedes ajustar esto según tu preferencia
         const opacity = Math.min(1, window.scrollY / maxOpacityScroll);
-        const backgroundColor = `rgba(45, 45, 45, ${0.8 * (1 - opacity)})`;
+        const backgroundColor = 'rgba(45, 45, 45, 1)'; // Opacidad fija en 1
         navbar.style.background = `linear-gradient(to right, ${backgroundColor}, ${backgroundColor})`;
+
     });
     
 

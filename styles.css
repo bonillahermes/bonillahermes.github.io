@@ -152,7 +152,10 @@ body, html {
     }
   }
 
+
+
 /* Estilos del carrusel*/
+
 .carousel {
     position: relative;
 }
@@ -287,6 +290,47 @@ body, html {
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="16" height="16" fill="%23fff"><path d="M2 0v3h5V0H2zm0 5v3h5V5H2z"/></svg>'); /* Flecha derecha de Font Awesome */
 }
 
+/* Media queries para ajustar el diseño en dispositivos móviles */
+
+@media (max-width: 768px) {
+    .carousel-caption {
+        padding: 0.5rem;
+        width: 90%;
+    }
+
+    .carousel-caption h5 {
+        font-size: 1.5rem; /* Reducir tamaño de título */
+    }
+
+    .carousel-caption p {
+        font-size: 1rem; /* Reducir tamaño de subtítulo */
+    }
+
+    .carousel-item img {
+        min-height: 200px; /* Ajustar altura mínima de imágenes */
+        max-height: 400px; /* Ajustar altura máxima de imágenes */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-caption h5 {
+        font-size: 1.2rem; /* Tamaño más pequeño para pantallas muy pequeñas */
+    }
+
+    .carousel-caption p {
+        font-size: 0.9rem; /* Tamaño más pequeño para pantallas muy pequeñas */
+    }
+
+    .carousel-caption {
+        width: 100%; /* Ajustar ancho a pantalla completa */
+    }
+
+    .carousel-item img {
+        min-height: 150px; /* Altura mínima más pequeña para imágenes */
+    }
+}
+
+
 
 /* Estilos Generales para la Sección de Testimonios */
 .testimonials-section {
@@ -413,6 +457,114 @@ body, html {
         transform: scale(1); /* En pantallas pequeñas, no escalamos los slides */
     }
 }
+
+/* Estilos del formato de contacto */
+/* Estilos Base */
+.contact-section {
+    background-color: #222831;
+    color: #eeeeee;
+    padding: 60px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-section h2 {
+    color: #00adb5;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+}
+
+/* Estilización del Formulario */
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #393e46;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #00adb5;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: #333; /* Color de fondo más oscuro para definir los campos */
+    border: 1px solid #555; /* Borde sutil para una mejor definición */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    color: #ffffff; /* Cambia el color del texto a blanco para mayor contraste */
+    font-size: 16px;
+    transition: all 0.3s ease-in-out; /* Suaviza la transición de todos los efectos */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00adb5; /* Color de acento al enfocar */
+    background-color: #444; /* Fondo ligeramente más claro al enfocar */
+    box-shadow: 0 0 0 2px #00adb5; /* Efecto glow al enfocar */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite el redimensionamiento vertical */
+}
+
+/* Botón de Enviar */
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Agrega transform y box-shadow a la transición */
+    font-size: 1em; /* Ajusta según necesidad */
+    background-color: var(--primary-color); /* Usa una variable o un color que destaque */
+    color: #ffffff; /* Texto claro para contraste */
+    border: none; /* Remueve el borde si existe */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar interactividad */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra inicial sutil */
+}
+
+.btn-primary:hover,
+.btn-primary:focus { /* Incluye focus para accesibilidad */
+    background-color: var(--cta-hover-color); /* Cambia el color de fondo al pasar el mouse */
+    color: #ffffff; /* Texto claro para contraste */
+    text-decoration: none;
+    transform: translateY(-3px) scale(1.05); /* Eleva ligeramente el botón y lo hace crecer */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra más prominente para dar la sensación de elevación */
+}
+
+/* Animaciones de Entrada */
+.contact-section * {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 40px 20px;
+    }
+
+    #contact-form {
+        padding: 20px;
+    }
+
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+}
+
+
 
 /* Estilos del footer */
 .footer {
