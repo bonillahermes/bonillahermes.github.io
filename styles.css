@@ -124,35 +124,35 @@ body, html {
     width: auto; /* Ancho automático para mantener la proporción */
   }
   
-  /* Estilos responsivos para dispositivos móviles */
-  @media (max-width: 768px) {
-    .theme-main-menu {
-        height: auto; /* Altura automática en dispositivos móviles */
-    }
-    
-    .theme-main-menu .logo {
-        margin-left: 0; /* El logo puede estar alineado al borde en dispositivos móviles */
-    }
-    
+
+/* Estilos responsivos para dispositivos móviles */
+@media (max-width: 768px) {
     .navbar-toggler {
-        display: block; /* Asegúrate de que el botón de menú se muestre en móviles */
+        display: block; /* Muestra el botón de menú en dispositivos móviles */
+        margin-left: auto; /* Alinea el botón a la derecha */
     }
-    
+
+    .navbar-collapse {
+        display: none; /* Oculta el menú principal en dispositivos móviles */
+        width: 100%;
+        padding: 20px;
+        background-color: rgba(0,0,0,0.9); /* Fondo oscuro para el menú desplegable */
+    }
+
     .navbar-collapse.collapse.show {
-        display: block;
+        display: block; /* Muestra el menú cuando está activo */
     }
-  
+
     .navbar-nav {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Alinea los elementos del menú verticalmente */
     }
-  
+
     .nav-item {
-        padding: 0.5rem 0;
+        margin: 10px 0; /* Aumenta el espaciado vertical entre elementos */
     }
-  }
+}
 
-
+  
 
 /* Estilos del carrusel*/
 
@@ -294,8 +294,12 @@ body, html {
 
 @media (max-width: 768px) {
     .carousel-caption {
-        padding: 0.5rem;
-        width: 90%;
+        left: 50%; /* Centra la caja de texto */
+        top: 50%; /* Ajusta verticalmente para evitar que el texto se salga del carrusel */
+        transform: translate(-50%, -50%); /* Centra la caja de texto respecto a su posición */
+        width: 90%; /* Hace la caja de texto más estrecha para adaptarse a pantallas pequeñas */
+        padding: 1rem; /* Reduce el padding para dispositivos móviles */
+        font-size: 14px; /* Reduce el tamaño de la fuente para mejorar la legibilidad */
     }
 
     .carousel-caption h5 {
@@ -307,22 +311,27 @@ body, html {
     }
 
     .carousel-item img {
-        min-height: 200px; /* Ajustar altura mínima de imágenes */
-        max-height: 400px; /* Ajustar altura máxima de imágenes */
+        min-height: 200px; /* Ajusta la altura mínima de la imagen para dispositivos móviles */
+        max-height: 300px; /* Ajusta la altura máxima para dispositivos móviles */
     }
 }
 
 @media (max-width: 480px) {
     .carousel-caption h5 {
-        font-size: 1.2rem; /* Tamaño más pequeño para pantallas muy pequeñas */
+        font-size: 1.0rem; /* Tamaño más pequeño para pantallas muy pequeñas */
     }
 
     .carousel-caption p {
-        font-size: 0.9rem; /* Tamaño más pequeño para pantallas muy pequeñas */
+        font-size: 0.8rem; /* Tamaño más pequeño para pantallas muy pequeñas */
     }
 
     .carousel-caption {
-        width: 100%; /* Ajustar ancho a pantalla completa */
+        left: 50%; /* Centra la caja de texto */
+        top: 50%; /* Ajusta verticalmente para evitar que el texto se salga del carrusel */
+        transform: translate(-50%, -50%); /* Centra la caja de texto respecto a su posición */
+        width: 90%; /* Hace la caja de texto más estrecha para adaptarse a pantallas pequeñas */
+        padding: 1rem; /* Reduce el padding para dispositivos móviles */
+        font-size: 14px; /* Reduce el tamaño de la fuente para mejorar la legibilidad */
     }
 
     .carousel-item img {

@@ -1,6 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Toggle para la barra de navegación en dispositivos móviles
+    var toggler = document.querySelector('.navbar-toggler');
+    var menu = document.querySelector('#navbarSupportedContent');
+    
+    toggler.addEventListener('click', function() {
+        menu.classList.toggle('show');
+    });
     // Inicialización de bibliotecas y plugins
-
+    
     // Animate On Scroll (AOS)
     AOS.init({
         offset: 120,
@@ -67,21 +74,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Funcionalidades específicas
+    
+    // Definir títulos y subtítulos fuera del bucle forEach
+    const titles = ['Transformando Datos en Decisiones Inteligentes', 'Innovación con Inteligencia Artificial', 'Consultoría Estadística Experta'];
+    const subtitles = ['Descubre cómo nuestra ciencia de datos impulsa el crecimiento del negocio', 'Implementa soluciones de IA que crean valor real y sostenible', 'Soluciones estadísticas precisas para desafíos complejos'];
 
-      // Ajustar títulos y subtítulos de elementos del carrusel
-  document.querySelectorAll('.carousel-item').forEach((item, index) => {
-    const title = item.querySelector('h5');
-    const subtitle = item.querySelector('p');
-    title.textContent = titles[index];
-    subtitle.textContent = subtitles[index];
-});
-
-    // Toggle para la barra de navegación en dispositivos móviles
-    const menuToggle = document.getElementById('menu-toggle');
-    const navbar = document.getElementById('navbar');
-    menuToggle.addEventListener('click', function() {
-        navbar.classList.toggle('active');
+    // Ajustar títulos y subtítulos de elementos del carrusel
+    document.querySelectorAll('.carousel-item').forEach((item, index) => {
+        const title = item.querySelector('h5');
+        const subtitle = item.querySelector('p');
+        if (title) title.textContent = titles[index]; // Añadido chequeo de existencia
+        if (subtitle) subtitle.textContent = subtitles[index]; // Añadido chequeo de existencia
     });
+
 
     // Event listeners para los botones de navegación del carrusel
     const prevButton = document.querySelector('.carousel-control.prev');
