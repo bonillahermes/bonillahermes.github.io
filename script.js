@@ -147,6 +147,21 @@ document.querySelectorAll('.nav-item').forEach(item => {
     });
 });
 
+
+document.addEventListener('scroll', function() {
+    var servicesSection = document.getElementById('services'); // Asegúrate de que tu sección de servicios tenga este ID
+    var whatsappIcon = document.querySelector('.whatsapp-icon');
+    
+    var sectionTop = servicesSection.getBoundingClientRect().top; // Obtiene la posición de la sección de servicios
+    var isVisible = sectionTop - window.innerHeight < 0; // Comprueba si la sección está visible
+    
+    if (isVisible) {
+        whatsappIcon.style.display = 'flex'; // Muestra el ícono de WhatsApp
+    } else {
+        whatsappIcon.style.display = 'none'; // Oculta el ícono si la sección de servicios no está visible
+    }
+});
+
 // Funciones relacionadas con la internacionalización y carga de contenido
 
 function setBlog(id) {

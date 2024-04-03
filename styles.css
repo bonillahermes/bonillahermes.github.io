@@ -4,7 +4,7 @@
 :root {
     --primary-color: #007aff; 
     --text-color: #333;
-    --background-color-page: #f7f6f6; /* Color de fondo de la página en general */
+    --background-color-page: #3a3939; /* Color de fondo de la página en general */
     --background-color-section: #ffffff; /* Color de fondo para las secciones de servicios */
     --background-color-section-alt: #464343; /* Color de fondo alternativo para secciones */
     --cta-color: #007aff; /* Color del botón CTA */
@@ -339,240 +339,235 @@ body, html {
     }
 }
 
+/* Estilos Generales para la Sección de Servicios */
 
-
-/* Estilos Generales para la Sección de Testimonios */
-.testimonials-section {
-    background: #ffffff; /* Fondo blanco */
-    padding: 80px 0; /* Espaciado generoso para un diseño aireado */
-    font-family: var(--font-family); /* Tipografía moderna y limpia */
-    color: var(--text-color); /* Color del texto basado en la variable */
+/* Ajustes para las Secciones de Servicio */
+.service-section {
+    display: flex;
+    flex-direction: column; /* Cambio a dirección de columna para un enfoque más moderno */
+    align-items: center; /* Centrado horizontal */
+    justify-content: center; /* Centrado vertical */
+    margin: 2rem auto; /* Espacio simétrico horizontalmente y separación entre secciones */
+    padding: 3rem 1rem; /* Padding reducido para un diseño más limpio */
+    background-color: #000; /* Fondo negro para resaltar los servicios */
+    border-radius: 12px; /* Bordes más redondeados para un aspecto suave */
+    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.05); /* Sombra blanca sutil para un efecto elevado sobre fondo negro */
+    transition: all 0.3s ease; /* Transición suave para todos los estados */
+    overflow: hidden; /* Esconde los elementos que desborden el contenedor */
 }
 
-.title-style-six {
-    text-align: center; /* Centra el título en la sección */
-    margin-bottom: 1em; /* Espacio debajo del título para separarlo del contenido que sigue */
+/* Estilos para Descripciones e Imágenes */
+.service-section .description {
+    text-align: center; /* Texto centrado para las descripciones */
+    padding: 2rem; /* Espaciado interno para la descripción */
+}
+
+.service-section .description h2 {
+    color: #E2E8F0; /* Texto claro para un alto contraste */
+    margin: 0.5em 0; /* Espacio optimizado entre elementos */
+    font-size: 2.2rem; /* Aumento del tamaño de la fuente */
+    font-weight: 600; /* Fuente menos pesada para un aspecto limpio */
+}
+
+.service-section .description p {
+    color: #B2BEC3; /* Gris más claro para el texto que mejora la legibilidad */
+    margin-bottom: 1.5rem; /* Más espacio antes del botón CTA */
+}
+
+/* Estilo para Imágenes */
+.service-section .image img {
+    max-width: 80%; /* Asegura que la imagen sea grande y centrada */
+    border-radius: 12px; /* Bordes redondeados para las imágenes */
+    margin: 2rem 0; /* Espaciado alrededor de la imagen */
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1); /* Sombra sutil para efecto flotante */
+}
+
+/* Estilos para Botones de Acción (Call to Action - CTA) */
+.cta {
+    background-color: #0DCAF0; /* Color brillante y llamativo para el CTA */
+    color: #000; /* Texto oscuro para un alto contraste */
+    padding: 12px 36px; /* Botones más grandes y atractivos */
+    border-radius: 30px; /* Bordes aún más redondeados para un estilo moderno */
+    font-size: 1rem; /* Tamaño de la fuente del botón */
+    font-weight: 600; /* Fuente más negrita para destacar */
+    letter-spacing: 0.5px; /* Espaciado de letras para definición */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada para el botón */
+    margin-top: 1rem; /* Espaciado adicional encima del botón */
+    transition: all 0.3s ease; /* Transición suave para todos los estados */
+}
+
+.cta:hover {
+    background-color: #0B95D0; /* Oscurecer el color al pasar el mouse */
+    transform: translateY(-2px); /* Pequeña elevación del botón al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada en hover */
+}
+
+@media (max-width: 768px) {
+    .service-section {
+        padding: 2rem 1rem; /* Padding ajustado para móviles */
+    }
+
+    .service-section .description, .service-section .image {
+        flex-basis: 100%; /* Cada uno toma el 100% del ancho en móviles */
+    }
+}
+  
+
+.testimonials-section {
+    background: linear-gradient(245deg, #000000, #0a0a0a 85%); /* Fondo con degradado para efecto dinámico */
+    color: #E2E8F0;
+    padding: 100px 50px; /* Ajusta el espaciado para mayor impacto visual */
+    position: relative; /* Necesario para el posicionamiento absoluto de elementos internos */
 }
 
 .title-style-six h2 {
-    font-size: 2.5em; /* Tamaño grande del título para destacar */
-    color: var(--primary-color); /* Utiliza el color primario definido en las variables CSS */
-    font-weight: bold; /* Hace que el título sea negrita para mayor énfasis */
-    margin-bottom: 0.5em; /* Espacio debajo del título para separarlo del contenido que sigue */
-    padding: 0 1em; /* Añade un poco de padding a los lados para manejar los textos largos en pantallas pequeñas */
+    font-size: 3rem; /* Aumenta el tamaño para destacar */
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2; /* Asegura que el texto esté por encima del fondo */
 }
 
-/* Estilos para el Slider de Testimonios */
 .testimonialsSlider .item {
-    padding: 15px;
-    margin: 0 10px;
+    position: relative; /* Posicionamiento relativo para controlar la superposición */
+    padding: 30px;
+    margin: 20px 15px;
+    display: flex; /* Acomoda los testimonios en fila */
+    align-items: center; /* Alinea verticalmente */
 }
 
 .testimonial-item {
-    background-color: var(--background-color-section);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Asegura transiciones suaves */
-    opacity: 0.8; /* Los testimonios no centrales son ligeramente transparentes */
+    background: rgba(255, 255, 255, 0.1); /* Fondo translúcido para el contenido */
+    padding: 20px 40px; /* Ajusta el padding para un diseño más limpio */
+    border-radius: 10px; /* Bordes redondeados sutiles */
+    margin-right: 30px; /* Espacio entre los ítems del slider */
+    box-shadow: 0 10px 20px rgba(255,255,255,0.07); /* Sombra suave para efecto flotante */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque detrás de los elementos */
+    position: relative;
+    z-index: 2; /* Asegura que el elemento esté por encima del fondo */
 }
 
 .testimonial-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 40px rgba(255,255,255,0.15);
 }
 
 .testimonial-item p {
-    color: var(--text-color);
-    font-size: 1rem;
+    font-size: 1.1rem; /* Aumenta el tamaño para mejorar la legibilidad */
+    color: #FFFFFF;
     line-height: 1.7;
-    margin-bottom: 1.5em;
+    margin-bottom: 1rem;
 }
 
-.testimonial-item h4 {
-    color: var(--primary-color);
-    margin-bottom: 0.25em;
+.testimonial-item h4, .testimonial-item span {
+    color: #0DCAF0; /* Color brillante para los nombres y cargos */
 }
 
-.testimonial-item span {
-    color: var(--text-color);
-    font-size: 0.85rem;
-}
-
-/* Estilos para Encabezados dentro de Testimonios */
-.testimonials-section h2 {
-    color: var(--text-color);
-    font-weight: bold;
-    margin-bottom: 0.5em;
-  }
-  
-  /* Estilos para Párrafos dentro de Testimonios */
-  .testimonials-section p {
-    color: var(--text-color); /* Mejor contraste con un fondo oscuro */
-    margin-bottom: 1em;
-  }
-  
-  /* Ajuste para nombres y cargos en Testimonios */
-  .testimonials-section .testimonial-item h4 {
-    color: var(--primary-color); /* Uso del color primario para nombres */
-  }
-  
-  .testimonials-section .testimonial-item span {
-    color: var(--text-color); /* Un gris claro para los cargos/empresas */
-  }
-
-  .testimonialsSlider .slick-center .testimonial-item {
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño del testimonio central */
-    opacity: 1; /* Asegura que el testimonio central sea totalmente opaco */
-}
-
-/* Asegurándose de que Slick Slider no estire los slides no centrales */
-.slick-track {
-    display: flex;
-}
-
-.slick-slide {
-    height: auto; /* Esto permite que los slides tengan su altura natural */
-}
-
-  /* Estilos para los botones de navegación del carrusel */
-.slick-dots li button:before, .slick-prev:before, .slick-next:before {
-    color: var(--primary-color);
-}
-
-.slick-dots li.slick-active button:before {
-    color: var(--cta-color);
-}
-
+/* Estilos para los botones de navegación del carrusel */
 .slider-arrows div {
-    background-color: var(--primary-color);
+    background-color: #0DCAF0;
     color: #fff;
+    padding: 10px; /* Botones más grandes y fáciles de interactuar */
     border-radius: 50%;
+    position: absolute; /* Posicionamiento absoluto dentro de la sección */
+    top: 50%; /* Centrado verticalmente */
+    transform: translateY(-50%); /* Ajuste fino para centrado perfecto */
+    cursor: pointer; /* Cursor tipo mano para botones */
+    z-index: 3; /* Asegura que los botones estén por encima de todo */
 }
 
-/* Ajuste para la responsividad */
+/* Ajustes para que los botones aparezcan a la izquierda y derecha */
+.slider-arrows div.left { left: 25px; }
+.slider-arrows div.right { right: 25px; }
+
+/* Ajuste de responsividad */
 @media (max-width: 768px) {
-    .testimonialsSlider .item {
-        margin: 0 5px;
-    }
-
-    .testimonial-item {
-        padding: 20px;
-    }
-
-    .testimonialsSlider .slick-slide {
-        transform: scale(1); /* En pantallas pequeñas, no escalamos los slides */
-    }
+    .testimonialsSlider .item { margin: 0 auto; }
+    .testimonial-item { margin: 0 10px; }
+    .slider-arrows div { display: none; } /* Esconde los botones en dispositivos móviles para evitar el hacinamiento */
 }
 
-/* Estilos del formato de contacto */
-/* Estilos Base */
-.contact-section {
-    background-color: #222831;
-    color: #eeeeee;
+
+#about-me {
+    background-color: #f4f4f4;
+    color: #333;
     padding: 60px 0;
-    font-family: 'Poppins', sans-serif;
-}
-
-.contact-section h2 {
-    color: #00adb5;
     text-align: center;
-    margin-bottom: 50px;
+}
+
+.about-me-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.about-me-profile {
+    flex-basis: 35%;
+}
+
+.profile-picture {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-picture:hover {
+    transform: scale(1.1);
+}
+
+.about-me-info {
+    flex-basis: 60%;
+    padding: 0 20px;
+}
+
+.about-me-info h2 {
     font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 20px;
 }
 
-/* Estilización del Formulario */
-#contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #393e46;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+.about-me-info p {
+    text-align: left;
+    line-height: 1.6;
 }
 
-.form-group {
-    margin-bottom: 25px;
-    position: relative;
+.about-me-links h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin: 40px 0 20px 0;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 10px;
-    color: #00adb5;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 15px;
-    background-color: #333; /* Color de fondo más oscuro para definir los campos */
-    border: 1px solid #555; /* Borde sutil para una mejor definición */
-    border-radius: 4px; /* Bordes ligeramente redondeados */
-    color: #ffffff; /* Cambia el color del texto a blanco para mayor contraste */
-    font-size: 16px;
-    transition: all 0.3s ease-in-out; /* Suaviza la transición de todos los efectos */
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #00adb5; /* Color de acento al enfocar */
-    background-color: #444; /* Fondo ligeramente más claro al enfocar */
-    box-shadow: 0 0 0 2px #00adb5; /* Efecto glow al enfocar */
-}
-
-.form-group textarea {
-    resize: vertical; /* Permite el redimensionamiento vertical */
-}
-
-/* Botón de Enviar */
-.btn-primary {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border-radius: 5px;
+.about-me-links a {
+    color: #007bff;
     text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Agrega transform y box-shadow a la transición */
-    font-size: 1em; /* Ajusta según necesidad */
-    background-color: var(--primary-color); /* Usa una variable o un color que destaque */
-    color: #ffffff; /* Texto claro para contraste */
-    border: none; /* Remueve el borde si existe */
-    cursor: pointer; /* Cambia el cursor a una mano para indicar interactividad */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra inicial sutil */
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
 }
 
-.btn-primary:hover,
-.btn-primary:focus { /* Incluye focus para accesibilidad */
-    background-color: var(--cta-hover-color); /* Cambia el color de fondo al pasar el mouse */
-    color: #ffffff; /* Texto claro para contraste */
-    text-decoration: none;
-    transform: translateY(-3px) scale(1.05); /* Eleva ligeramente el botón y lo hace crecer */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra más prominente para dar la sensación de elevación */
+.about-me-links a:hover {
+    color: #0056b3;
 }
 
-/* Animaciones de Entrada */
-.contact-section * {
-    animation: slideIn 0.5s ease-out forwards;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-    .contact-section {
-        padding: 40px 20px;
+    .about-me-container {
+        flex-direction: column;
     }
 
-    #contact-form {
-        padding: 20px;
+    .about-me-profile, .about-me-info {
+        flex-basis: 100%;
     }
 
-    .contact-section h2 {
-        font-size: 2rem;
+    .profile-picture {
+        margin: 0 auto 30px;
+    }
+
+    .about-me-info p {
+        text-align: center;
     }
 }
-
 
 
 /* Estilos del footer */
@@ -672,3 +667,27 @@ a.footer-link:hover {
     color: #00adb5;
 }
 
+/* Icono de whatsapp*/
+.whatsapp-icon {
+    position: fixed; /* Posicionamiento fijo en la pantalla */
+    right: 20px; /* Distancia desde el lado izquierdo de la pantalla */
+    bottom: 20px; /* Distancia desde la parte inferior de la pantalla */
+    font-size: 2.5rem; /* Tamaño del ícono */
+    color: #25D366; /* Color oficial de WhatsApp */
+    background-color: white; /* Fondo blanco para el círculo */
+    border-radius: 50%; /* Hace el fondo completamente redondo */
+    width: 50px; /* Ancho del círculo */
+    height: 50px; /* Alto del círculo */
+    display: flex; /* Permite centrar el ícono dentro del círculo */
+    align-items: center; /* Centra el ícono verticalmente */
+    justify-content: center; /* Centra el ícono horizontalmente */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Sombra suave alrededor del botón */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    z-index: 1000; /* Asegura que el botón se muestre por encima de otros elementos */
+}
+
+.whatsapp-icon:hover {
+    color: white; /* Cambia el color del ícono al pasar el mouse */
+    background-color: #25D366; /* Cambia el fondo al color oficial de WhatsApp */
+    text-decoration: none; /* Mantiene el enlace sin subrayado al pasar el mouse */
+}
