@@ -73,48 +73,38 @@
 <body data-spy="scroll" data-target="#one-page-nav" data-offset="120">
 
 <!-- Barra de navegación -->
-<div class="theme-main-menu sticky-menu theme-menu-five" id="navbar">
-    <div class="d-flex align-items-center justify-content-between">
-        <!-- Logo -->
-        <div class="logo">
-            <a href="index.html"><img src="images/logo.png" alt="Logo" /></a>
-        </div>
-        <nav id="mega-menu-holder" class="navbar navbar-expand-lg">
-            <div class="container nav-container">
-                <!-- Botón para menú en móviles -->
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="flaticon-menu-of-three-lines"></i>
-                </button>
-                <!-- Contenedor de navegación -->
-                <div class="navbar-collapse collapse" id="navbarSupportedContent">
-                    <div class="flex-grow-1 d-flex justify-content-center">
-                        <nav id="mega-menu-holder" class="navbar navbar-expand-lg">
-                            <ul class="navbar-nav main-side-nav font-gordita" id="one-page-nav">
-                                <!-- Elementos de navegación aquí -->
-                                <li class="nav-item">
-                                    <a href="#ai" class="nav-link">Servicios</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#about-me" class="nav-link">Sobre Mí</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://github.com/bonillahermes/Ciencia_Datos" class="nav-link" target="_blank">Proyectos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://api.whatsapp.com/send/?phone=573009769468&text&type=phone_number&app_absent=0" class="nav-link" target="_blank">Contacto</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="https://www.linkedin.com/in/bonillahermes/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                </li>                                             
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </nav>
+<nav class="navbar" aria-label="Menú principal">
+    <a href="index.html" class="navbar-brand" title="Inicio">
+      <img src="images/logo.png" alt="Logo de Hermes" class="navbar-logo">
+    </a>
+    <button class="toggle-button" aria-label="Abrir menú">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <div class="navbar-links">
+      <ul>
+        <li class="nav-item">
+            <a href="#servicios" class="nav-link" title="Descubre mis servicios">Servicios</a></li>
+        <li><a href="#about-me" class="nav-link" title="Aprende más sobre mí">Acerca de Mí</a></li>
+        <li class="nav-item">
+            <a href="https://github.com/bonillahermes/Ciencia_Datos" class="nav-link" title="Explora mis proyectos" target="_blank">Proyectos</a>
+        </li>
+        <li class="nav-item">
+            <a href="#blog" class="nav-link" title="Lee mi blog">Blog</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://api.whatsapp.com/send/?phone=573009769468&text&type=phone_number&app_absent=0" class="nav-link" title="Ponte en contacto conmigo">Contacto</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.linkedin.com/in/bonillahermes/" target="_blank">
+            <i class="fa fa-linkedin" aria-hidden="true" title="Visita mi perfil de LinkedIn">
+            </i>
+          </a>
+        </li> 
+      </ul>
     </div>
-</div>
-
+</nav>
 
 <!-- Carrusel -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

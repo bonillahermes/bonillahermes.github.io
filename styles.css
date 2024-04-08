@@ -24,133 +24,184 @@ body, html {
 
 /*Barra de navegación*/
 
-/* Estilos de la barra de navegación principal */
-.theme-main-menu {
-    background: linear-gradient(to right, rgba(45, 45, 45, 0.8), rgba(26, 26, 26, 0.8)); /* Degradado de gris oscuro con transparencia */
-    background-color: black;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    position: sticky;
+.navbar {
+    background-color: #000;
+    color: white;
+    padding: 10px 20px; /* Añade margen interno en todos los lados */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    position: fixed;
     top: 0;
+    left: 10 px; /* Establece la barra a la izquierda */
+    right: 40 px; /* Establece la barra a la derecha */
     z-index: 1000;
     display: flex;
-    align-items: center; /* Alinea elementos internos verticalmente */
-    height: 150px; /* Altura optimizada para la barra de navegación */
-    justify-content: center; 
-    padding: 0 30px; /* Agrega un poco de padding en los lados */
-    transition: height 0.3s ease; /* Agrega una transición suave a la propiedad height */
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: flex-start; /* Alinea los elementos al inicio */
+  }
+
+  .navbar-brand {
+    margin-right: 20px; /* Espacio entre el logo y las opciones de navegación */
+  }
+
+  .navbar-logo {
+    transition: transform 0.3s ease;
+    height: 30px; /* Ajusta según el tamaño deseado para tu logo */
+    width: auto; /* Mantiene las proporciones del logo */
   }
   
-  /* Centrado de elementos dentro de la barra de navegación */
-  .theme-main-menu .nav-container {
+  .navbar-logo:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño del logo al pasar el mouse */
+  }
+
+  .navbar-links {
     display: flex;
-    flex-grow: 1;
-    justify-content: center; /* según donde quieras que estén tus enlaces */
-    align-items: center; /* Alinea elementos internos verticalmente */
-    width: 100%; /* Asume todo el ancho disponible */
-    padding: 0 15px; /* Ajusta el padding como sea necesario */
+    align-items: center; /* Alinea los elementos verticalmente */
+    height: 100%; /* Establece la altura de los enlaces igual a la del navbar */
   }
   
-  /* Navegación */
-  .theme-main-menu .navbar {
-    flex: 1 0 100%;
-    justify-content: center; /* Centra la navegación en el espacio restante */
-    order: 2; /* Asegura que la navegación siga al logo */
-    flex-grow: 1; /* Permite que la barra de navegación crezca para llenar el espacio disponible */
-  }
-  
-  .theme-main-menu .navbar {
-    flex: 1; /* Permite que la barra de navegación crezca para llenar el espacio disponible */
-    justify-content: center; /* Centra la navegación en el espacio restante */
-  }
-  
-  .theme-main-menu .nav-item {
-    padding: 0 10px; /* Espaciado horizontal entre elementos de la lista */
-  }
-  
-  .flex-grow-1.d-flex.justify-content-center {
-    flex-grow: 1;
-  }
-  
-  .navbar-nav {
-    list-style-type: none;
+  .navbar-links ul {
+    list-style: none;
     display: flex;
-    align-items: center;
-    margin: 0;
+    align-items: center; /* Asegura que los ítems de la lista estén centrados verticalmente */
     padding: 0;
+    margin: 0; /* Elimina cualquier margen por defecto */
   }
   
-  .nav-item {
-    margin: 0 1rem;
+  .navbar-links li {
+    padding: 0 15px;
+    transition: transform 0.3s ease;
   }
   
-  .nav-link {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .nav-link:hover, .nav-link:focus {
-    color: #00adb5; /* al pasar el mouse */
-  }
-  
-  /* Botón del menú para dispositivos móviles */
-  .navbar-toggler {
-    background: none;
-    border: none;
+  .navbar-links a {
+    transition: color 0.3s ease;
+    position: relative;
     color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none; /* Oculto en dispositivos de escritorio */
-  }
-  
-  .navbar-nav.main-side-nav {
+    text-decoration: none;
+    font-size: 16px;
     display: flex;
-    justify-content: center;
+    align-items: center; /* Alinea el texto del enlace verticalmente */
+  }
+  
+  .navbar-links a:hover, .navbar-links a:focus {
+    color: #1E90FF;
+    text-decoration: none;
+  }
+
+  .navbar-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #1E90FF; /* O el color de tu elección */
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  .navbar-links a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+  
+  .toggle-button {
+    position: absolute;
+    right: 20px; /* Alinea el botón a la derecha */
+    cursor: pointer; /* Cambia el cursor a una mano cuando pasas sobre el botón */
+    display: none; /* El botón de menú se muestra solo en la vista móvil */
+    flex-direction: column;
+    justify-content: space-around; /* Espacia uniformemente las barras */
     align-items: center;
-    width: 100%; /* Puede que necesites ajustar esto según tus necesidades */
+    width: 30px; /* Ajusta la anchura del botón de menú */
+    height: 25px; /* Ajusta la altura del botón de menú */
+    background-color: transparent; /* Fondo transparente típico de Apple */
   }
   
-  /* Logo */
-  .theme-main-menu .logo {
-    flex: 0 0 auto; /* Asegura que el logo no se expanda y se ajuste a su contenido */
-    text-align: left;
-    margin-left: 20px; /* Ajusta este valor según necesites para añadir espacio a la izquierda */
-    margin-right: auto; /* Mantiene los elementos siguientes a la derecha */
-    order: 1; /* Mantiene el logo al inicio, aunque esto puede ser innecesario si ya es el primer elemento */
+  .toggle-button .bar {
+    height: 2px; /* Barras más delgadas para un aspecto más refinado */
+    width: 100%; /* Utiliza el ancho completo del contenedor del botón */
+    background-color: white;
+    border-radius: 10px;
+    transition: all 0.3s ease; /* Suaviza la transición de los efectos de las barras */
+  }
+
+  /* Estilo para cuando el botón de menú está activo (cambiar la forma de las barras) */
+.toggle-button.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg); /* Ajusta la posición para efecto de 'cruce' */
   }
   
-  .logo img {
-    height: 60px; /* Altura fija para el logo */
-    width: auto; /* Ancho automático para mantener la proporción */
+  /* Estilo para cuando el botón de menú está activo (si deseas cambiar la forma de las barras) */
+  .toggle-button.active .bar:nth-child(1) {
+    transform: rotate(45deg);
   }
   
-
-/* Estilos responsivos para dispositivos móviles */
-@media (max-width: 768px) {
-    .navbar-toggler {
-        display: block; /* Muestra el botón de menú en dispositivos móviles */
-        margin-left: auto; /* Alinea el botón a la derecha */
+  .toggle-button.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .toggle-button.active .bar:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
     }
-
-    .navbar-collapse {
-        display: none; /* Oculta el menú principal en dispositivos móviles */
-        width: 100%;
-        padding: 20px;
-        background-color: rgba(0,0,0,0.9); /* Fondo oscuro para el menú desplegable */
+  
+    .navbar-links {
+      display: none;
+      width: 100%;
+      padding-top: 20px;
+      background-color: rgba(0, 0, 0, 0.9); /* Fondo semitransparente */
+      position: absolute;
+      top: 60px; /* Ajusta según la altura de tu barra de navegación */
+      left: 0;
+      right: 0;
     }
-
-    .navbar-collapse.collapse.show {
-        display: block; /* Muestra el menú cuando está activo */
+  
+    .navbar-links ul {
+      flex-direction: column;
+      align-items: center;
+      width: 100%; /* Ocupa el ancho completo */
     }
-
-    .navbar-nav {
-        flex-direction: column; /* Alinea los elementos del menú verticalmente */
+  
+    .navbar-links li {
+      width: 100%; /* Hace que los enlaces ocupen todo el ancho disponible */
+      margin-bottom: 15px;
+      transition: background-color 0.3s; /* Transición suave para el efecto de hover */
     }
-
-    .nav-item {
-        margin: 10px 0; /* Aumenta el espaciado vertical entre elementos */
+  
+    .navbar-links a {
+      display: block; /* Hace que los enlaces ocupen todo el ancho del li */
+      padding: 10px 20px; /* Añade padding para hacer los enlaces más "tocables" */
+      text-align: center; /* Centra el texto de los enlaces */
+      border-radius: 5px; /* Bordes redondeados para un look moderno */
+      transition: color 0.3s, transform 0.3s; /* Suaviza las transiciones de color y transformación */
     }
-}
+  
+    .navbar-links a:hover, .navbar-links a:focus {
+      color: #1E90FF; /* Cambia el color al hacer hover o focus */
+      background-color: rgba(255, 255, 255, 0.1); /* Añade un ligero resaltado */
+      transform: scale(1.05); /* Escala ligeramente el enlace para un efecto de hover */
+    }
+  
+    .toggle-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px; /* Añade padding para facilitar la interacción táctil */
+      margin-left: auto; /* Alinea el botón de menú a la derecha */
+    }
+  
+    .navbar-links.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+    
 
   
 

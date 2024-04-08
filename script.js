@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Toggle para la barra de navegación en dispositivos móviles
-    var toggler = document.querySelector('.navbar-toggler');
-    var menu = document.querySelector('#navbarSupportedContent');
-    
-    toggler.addEventListener('click', function() {
-        menu.classList.toggle('show');
+    const toggleButton = document.querySelector('.toggle-button');
+    const navbarLinks = document.querySelector('.navbar-links');
+  
+    toggleButton.addEventListener('click', () => {
+      toggleButton.classList.toggle('active'); // Añade o elimina la clase 'active'
+      navbarLinks.classList.toggle('active'); // Añade o elimina la clase 'active' para mostrar u ocultar los enlaces de navegación
     });
     // Inicialización de bibliotecas y plugins
     
