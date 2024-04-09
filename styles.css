@@ -2,50 +2,138 @@
 /* Reset básico y estilos del cuerpo del documento */
 /* Variables CSS */
 :root {
-    --primary-color: #007aff; 
-    --text-color: #333;
-    --background-color-page: #3a3939; /* Color de fondo de la página en general */
-    --background-color-section: #ffffff; /* Color de fondo para las secciones de servicios */
-    --background-color-section-alt: #464343; /* Color de fondo alternativo para secciones */
-    --cta-color: #007aff; /* Color del botón CTA */
-    --cta-hover-color: #005ecb;
-    --font-family: 'Helvetica Neue', 'Roboto', sans-serif;
-  }
-/* Reset básico y estilos de fuente */
+  --primary-color: #007bff; 
+  --text-color: #f8f9fa;
+  --background-color-page: #282c34; /* Color de fondo de la página en general */
+  --background-color-section: #ffffff; /* Color de fondo para las secciones */
+  --background-color-section-alt: #6c757d; /* Color de fondo alternativo para secciones */
+  --cta-color: #007bff; /* Color del botón de llamada a la acción (CTA) */
+  --cta-hover-color: #0056b3;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --gradient-start: #1c1c1d; /* Inicio del degradado */
+  --gradient-end: #3a3a3a; /* Fin del degradado */
+  --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Sombra de caja para elementos flotantes */
+}
+
 body, html {
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    font-family: var(--font-family);
-    color: var(--text-color);
-    background: linear-gradient(var(--gradient-start), var(--gradient-end)); /* Declaración del degradado */
-  }
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background: var(--background-color-page);
+  background: linear-gradient(160deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  min-height: 100vh;
+}
+
+/* Estilos de botones generales */
+button, .button {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--cta-color);
+  color: white;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover, .button:hover {
+  background-color: var(--cta-hover-color);
+  transform: scale(1.05);
+}
+
+/* Estilos para enlaces */
+a {
+  color: var(--cta-color);
+  text-decoration: none; /* Remueve subrayado */
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: var(--cta-hover-color);
+}
+
+/* Estilos para las secciones */
+.section {
+  padding: 60px 0;
+  background-color: var(--background-color-section);
+}
+
+.section-alt {
+  background-color: var(--background-color-section-alt);
+  color: var(--text-color);
+}
+
+/* Tipografía y títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-top: 0;
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/* Mejoras para la legibilidad del texto */
+p {
+  line-height: 1.6;
+}
+
+/* Estilos para contenedores y tarjetas */
+.card {
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+  padding: 20px;
+}
+
   
 
 /*Barra de navegación*/
 
 .navbar {
-    background-color: #000;
-    color: white;
-    padding: 10px 20px; /* Añade margen interno en todos los lados */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
-    position: fixed;
-    top: 0;
-    left: 10 px; /* Establece la barra a la izquierda */
-    right: 40 px; /* Establece la barra a la derecha */
-    z-index: 1000;
-    display: flex;
-    align-items: center; /* Centra los elementos verticalmente */
-    justify-content: flex-start; /* Alinea los elementos al inicio */
-  }
+  background-color: var(--background-color-page);
+  color: white;
+  padding: 0; /* Eliminamos el padding para permitir que el flexbox maneje el espacio */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  position: fixed;
+  top: 0;
+  left: 0; /* Asegúrate de que la barra se extienda a lo largo de la ventana */
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  height: 65px; /* Establece una altura específica para la barra de navegación */
+}
 
-  .navbar-brand {
-    margin-right: 20px; /* Espacio entre el logo y las opciones de navegación */
-  }
+.navbar-brand {
+  display: flex; /* Permite el uso de flexbox para el logo */
+  align-items: center; /* Centra el logo verticalmente */
+  justify-content: center; /* Centra el logo horizontalmente */
+  /* No es necesario margin-right si quieres que todo esté centrado */
+}
 
   .navbar-logo {
     transition: transform 0.3s ease;
-    height: 30px; /* Ajusta según el tamaño deseado para tu logo */
+    height: 40px; /* Ajusta según el tamaño deseado para tu logo */
     width: auto; /* Mantiene las proporciones del logo */
   }
   
@@ -83,7 +171,7 @@ body, html {
   }
   
   .navbar-links a:hover, .navbar-links a:focus {
-    color: #1E90FF;
+    color: #00adb5;
     text-decoration: none;
   }
 
@@ -94,7 +182,7 @@ body, html {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #1E90FF; /* O el color de tu elección */
+    background-color: #00adb5; /* O el color de tu elección */
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
@@ -115,14 +203,14 @@ body, html {
     align-items: center;
     width: 30px; /* Ajusta la anchura del botón de menú */
     height: 25px; /* Ajusta la altura del botón de menú */
-    background-color: transparent; /* Fondo transparente típico de Apple */
+    background-color:var(--background-color-page); 
   }
   
   .toggle-button .bar {
-    height: 2px; /* Barras más delgadas para un aspecto más refinado */
+    height: 2px; /* Barras más gruesas para un aspecto más refinado */
     width: 100%; /* Utiliza el ancho completo del contenedor del botón */
     background-color: white;
-    border-radius: 10px;
+    border-radius: 2px; /* Bordes redondeados para las barras */
     transition: all 0.3s ease; /* Suaviza la transición de los efectos de las barras */
   }
 
@@ -146,479 +234,571 @@ body, html {
   
   @media (max-width: 768px) {
     .navbar {
-      flex-direction: column;
-      align-items: flex-start;
+      background-color: var(--background-color-page); /* Mejor coherencia con el fondo */
+      padding: 10px 0; /* Reducir el padding para maximizar el espacio disponible */
     }
-  
-    .navbar-links {
-      display: none;
-      width: 100%;
-      padding-top: 20px;
-      background-color: rgba(0, 0, 0, 0.9); /* Fondo semitransparente */
-      position: absolute;
-      top: 60px; /* Ajusta según la altura de tu barra de navegación */
-      left: 0;
-      right: 0;
-    }
-  
-    .navbar-links ul {
-      flex-direction: column;
-      align-items: center;
-      width: 100%; /* Ocupa el ancho completo */
-    }
-  
-    .navbar-links li {
-      width: 100%; /* Hace que los enlaces ocupen todo el ancho disponible */
-      margin-bottom: 15px;
-      transition: background-color 0.3s; /* Transición suave para el efecto de hover */
-    }
-  
-    .navbar-links a {
-      display: block; /* Hace que los enlaces ocupen todo el ancho del li */
-      padding: 10px 20px; /* Añade padding para hacer los enlaces más "tocables" */
-      text-align: center; /* Centra el texto de los enlaces */
-      border-radius: 5px; /* Bordes redondeados para un look moderno */
-      transition: color 0.3s, transform 0.3s; /* Suaviza las transiciones de color y transformación */
-    }
-  
-    .navbar-links a:hover, .navbar-links a:focus {
-      color: #1E90FF; /* Cambia el color al hacer hover o focus */
-      background-color: rgba(255, 255, 255, 0.1); /* Añade un ligero resaltado */
-      transform: scale(1.05); /* Escala ligeramente el enlace para un efecto de hover */
-    }
-  
-    .toggle-button {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 5px; /* Añade padding para facilitar la interacción táctil */
-      margin-left: auto; /* Alinea el botón de menú a la derecha */
-    }
-  
-    .navbar-links.active {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
     
+      .navbar-links {
+        display: none;
+        width: 100%;
+        padding-top: 20px;
+        background-color: transparent; /* Fondo sólido para el menú desplegable */
+        position: absolute;
+        top: 55px; /* Ajuste para alinear con la parte inferior de la barra de navegación */
+        left: 0;
+        transition: 0.3s ease-out; /* Transición suave al mostrar/ocultar */
+      }
+    
+      .navbar-links ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%; /* Ocupa el ancho completo */
+        background-color: rgba(83, 81, 81, 0.849);
+      }
+    
+      .navbar-links li {
+        width: 100%; /* Hace que los enlaces ocupen todo el ancho disponible */
+        margin-bottom: 15px;
+        transition: background-color 0.3s; /* Transición suave para el efecto de hover */
+      }
+    
+      .navbar-links a {
+        display: block; /* Hace que los enlaces ocupen todo el ancho del li */
+        padding: 10px 20px; /* Añade padding para hacer los enlaces más "tocables" */
+        text-align: center; /* Centra el texto de los enlaces */
+        border-radius: 5px; /* Bordes redondeados para un look moderno */
+        transition: color 0.3s, transform 0.3s; /* Suaviza las transiciones de color y transformación */
+      }
+    
+      .navbar-links a:hover, .navbar-links a:focus {
+        color: #00adb5; /* Cambia el color al hacer hover o focus */
+        background-color: rgba(255, 255, 255, 0.1); /* Añade un ligero resaltado */
+        transform: scale(1.05); /* Escala ligeramente el enlace para un efecto de hover */
+      }
+    
+      .toggle-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px; /* Añade padding para facilitar la interacción táctil */
+        margin-left: auto; /* Alinea el botón de menú a la derecha */
+      }
+    
+      .navbar-links.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
 
-  
 
-/* Estilos del carrusel*/
-
-.carousel {
-    position: relative;
+/* Estilos Base del Carrusel */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
 }
-
-.carousel-inner {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+.carousel {
+  background-color: transparent; /* Asegura que el carrusel mismo no interfiera con el efecto del contenedor */
+  /* Aquí van los estilos existentes de tu carrusel */
+}
+.carousel-inner img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
 }
 
 .carousel-item {
-    position: relative;
-    display: none;
-    float: left;
-    width: 100%;
-    margin-right: -100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    transition: -webkit-transform 0.6s ease-in-out;
-    transition: transform 0.6s ease-in-out;
-    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
-}
-
-.carousel-item.active,
-.carousel-item-next,
-.carousel-item-prev {
-    display: block;
-}
-
-
-.carousel-item img {
-    width: 100%; /* Asegura que la imagen sea siempre tan ancha como su contenedor */
-    height: auto; /* Mantiene la relación de aspecto de la imagen */
-    object-fit: cover; /* Cubre el área del contenedor sin estirar la imagen */
-    min-height: 400px; /* Puedes ajustar esto al mínimo que desees para la altura de tus imágenes */
-    max-height: 600px; /* Puedes ajustar esto al máximo que desees para la altura de tus imágenes */
-    display: block;
+  height: 100vh;
+  display: flex; /* Habilita flexbox para el contenedor */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
 }
 
 .carousel-caption {
-    position: absolute;
-    left: 30%;
-    transform: translateX(-50%);
-    top: 50%; /* Ajusta el valor para centrar verticalmente */
-    z-index: 10;
-    padding: 3rem;
-    background-color: transparent;
-    color: #fff;
-    border-radius: 5px;
-    text-align: left;
-    width: 70%;
-    justify-content: center;
-    opacity: 0;
-    transform: translateY(20px); /* Ajusta el valor para centrar verticalmente */
-    transition: opacity 0.6s, transform 0.6s;
+  position: relative; /* Ajusta la posición relativa para el centrado con flexbox */
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  /* Elimina especificaciones de posición para permitir el centrado con flexbox */
+  padding: 1rem;
+  text-align: center; /* Asegura que el texto esté centrado dentro del caption */
 }
 
-.carousel-item.active .carousel-caption {
-    opacity: 1;
-    transform: translateY(0);
+.text_banner h5, .text_banner p {
+  margin: 0;
+  color: white;
 }
 
-.carousel-caption h5 {
-    font-size: 2.5rem; /* Tamaño de la fuente del título */
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin: 0 0 0.5rem; /* Agrega un poco de margen debajo del título */
+/* Media Queries para ajustar el texto en dispositivos más pequeños */
+@media (max-width: 768px) {
+  .text_banner h5 {
+      font-size: 6vw;
+  }
+
+  .text_banner p {
+      font-size: 5vw;
+  }
 }
 
-.carousel-caption p {
-    font-size: 1.5rem; /* Tamaño de la fuente del subtítulo */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    margin: 0; /* Remueve los márgenes adicionales */
+/* Ajustes adicionales para tabletas y dispositivos de mayor tamaño */
+@media (max-width: 1024px) {
+  .text_banner h5 {
+      font-size: 5vw;
+  }
+
+  .text_banner p {
+      font-size: 4vw;
+  }
 }
 
-.carousel-indicators li {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 1px;
-    text-indent: -999px;
-    cursor: pointer;
-    background-color: #333;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
+/* Ajustes para pantallas grandes */
+@media (min-width: 1025px) {
+  .text_banner h5, .text_banner p {
+      font-size: calc(1vw + 1vh);
+  }
 }
 
-.carousel-indicators .active {
-    background-color: #333;
+
+/* Servicios */
+
+.service-header {
+  text-align: center; /* Centra el texto */
+  padding: 4rem 0; /* Espaciado arriba y abajo del título */
+  position: relative; /* Para la línea decorativa */
+  background: #f9f9f9; /* El mismo fondo de la sección para coherencia */
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    width: 15%;
-    color: rgba(255, 255, 255, 0.5);
-    text-align: center;
-    opacity: 0.5;
+.service-header h1 {
+  font-size: 2.5rem; /* Tamaño grande y prominente para el título */
+  color: #333; /* Color oscuro para contraste */
+  margin-bottom: .5rem; /* Espacio debajo del título principal */
 }
 
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    color: #fff;
-    text-decoration: none;
-    opacity: 0.9;
+.service-header .tagline {
+  font-size: 1.2rem; /* Tamaño menor para el subtítulo */
+  color: #6c757d; /* Color más suave para el subtítulo */
+  margin-bottom: 2rem; /* Espacio debajo del subtítulo */
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: no-repeat 50%/100% 100%;
+.service-header p {
+  color: #6c757d; /* Color para el texto descriptivo */
+  max-width: 600px; /* Ancho máximo para el texto descriptivo */
+  margin-left: auto; /* Centra el texto descriptivo horizontalmente */
+  margin-right: auto;
 }
 
-/* Iconos de Font Awesome con fondo para el control del carrusel */
-.carousel-control-prev-icon {
-    background: #333; /* Fondo para la flecha izquierda */
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="16" height="16" fill="%23fff"><path d="M5.5 0l-3 3 3 3V5H8V3H2V0z"/></svg>'); /* Flecha izquierda de Font Awesome */
+.service-header::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1rem; /* Posición debajo del título */
+  width: 50px; /* Ancho de la línea decorativa */
+  height: 3px; /* Altura de la línea decorativa */
+  background-color: #00adb5; /* Color de la línea, ajusta según tu paleta de colores */
+  border-radius: 1.5px; /* Bordes ligeramente redondeados */
 }
 
-.carousel-control-next-icon {
-    background: #333; /* Fondo para la flecha derecha */
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="16" height="16" fill="%23fff"><path d="M2 0v3h5V0H2zm0 5v3h5V5H2z"/></svg>'); /* Flecha derecha de Font Awesome */
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .service-header {
+    padding: 2rem 1rem; /* Reduce el relleno para pantallas pequeñas */
+  }
+
+  .service-header h1 {
+    font-size: 2.5rem; /* Tamaño de fuente más pequeño para el título */
+    margin-bottom: 0.5rem;
+  }
+
+  .service-header .tagline {
+    font-size: 1rem; /* Tamaño de fuente más pequeño para la tagline */
+    margin-bottom: 0.5rem;
+  }
+
+  .service-header p {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño para el párrafo descriptivo */
+    padding: 0 1rem; /* Agrega algo de relleno lateral para no tocar los bordes */
+  }
 }
 
-/* Media queries para ajustar el diseño en dispositivos móviles */
+
+main {
+  padding: 4rem; /* Ajusta el relleno alrededor de la cuadrícula de servicios */
+  background: #f9f9f9; /* El color de fondo general de la sección */
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Crea tres columnas con tamaños iguales */
+  gap: 2rem; /* Espaciado entre tarjetas de servicio */
+  justify-content: center; /* Centra los elementos de la cuadrícula */
+  align-items: center; /* Alineación vertical */
+  margin-bottom: 4rem; /* Añade espacio debajo de la cuadrícula para separar de otros contenidos */
+}
+
+.service-item {
+  max-width: 350px; /* Establece un ancho máximo para las tarjetas */
+  margin: 0 auto; /* Centra las tarjetas dentro de las columnas */
+  background-color: #ffffff; /* Fondo de cada tarjeta de servicio */
+  border-radius: 15px; /* Esquinas redondeadas para las tarjetas */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
+  text-align: center; /* Alinea el texto al centro */
+  padding: 2rem; /* Espacio dentro de las tarjetas */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para efectos */
+}
+
+.service-item:hover {
+  transform: translateY(-10px); /* Eleva la tarjeta ligeramente al pasar el mouse */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Sombra más profunda en hover */
+}
+
+.service-item img {
+  max-width: 80%; /* Tamaño máximo de la imagen para asegurar que se ajuste bien */
+  margin-bottom: 1rem; /* Espacio entre la imagen y el título */
+}
+
+.service-item h2 {
+  margin: 0;
+  color: #333; /* Color del texto del título */
+  font-size: 1.2rem; /* Tamaño del texto del título */
+}
+
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr); /* Dos tarjetas por fila en tablets y dispositivos medianos */
+  }
+}
 
 @media (max-width: 768px) {
-    .carousel-caption {
-        left: 50%; /* Centra la caja de texto */
-        top: 50%; /* Ajusta verticalmente para evitar que el texto se salga del carrusel */
-        transform: translate(-50%, -50%); /* Centra la caja de texto respecto a su posición */
-        width: 90%; /* Hace la caja de texto más estrecha para adaptarse a pantallas pequeñas */
-        padding: 1rem; /* Reduce el padding para dispositivos móviles */
-        font-size: 14px; /* Reduce el tamaño de la fuente para mejorar la legibilidad */
-    }
+  .services-grid {
+    grid-template-columns: 1fr; /* Una tarjeta por fila en dispositivos móviles */
+  }
 
-    .carousel-caption h5 {
-        font-size: 1.5rem; /* Reducir tamaño de título */
-    }
+  .service-item {
+    max-width: none; /* Elimina el ancho máximo para permitir que la tarjeta se expanda */
+    margin: 0; /* Restablece el margen para tarjetas en dispositivos móviles */
+    padding: 1rem; /* Reduce el padding para dispositivos con pantallas pequeñas */
+  }
 
-    .carousel-caption p {
-        font-size: 1rem; /* Reducir tamaño de subtítulo */
-    }
+  .service-item img {
+    max-width: 100%; /* Permite que la imagen ocupe todo el ancho disponible en pantallas pequeñas */
+  }
 
-    .carousel-item img {
-        min-height: 200px; /* Ajusta la altura mínima de la imagen para dispositivos móviles */
-        max-height: 300px; /* Ajusta la altura máxima para dispositivos móviles */
-    }
+  .service-item h2 {
+    font-size: 1.5rem; /* Aumenta el tamaño de fuente del título para mejorar la legibilidad */
+  }
 }
 
 @media (max-width: 480px) {
-    .carousel-caption h5 {
-        font-size: 1.0rem; /* Tamaño más pequeño para pantallas muy pequeñas */
-    }
+  main {
+    padding: 2rem; /* Reduce el padding del contenedor principal para pantallas muy pequeñas */
+  }
 
-    .carousel-caption p {
-        font-size: 0.8rem; /* Tamaño más pequeño para pantallas muy pequeñas */
-    }
+  .service-item {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra más suave para dispositivos móviles */
+  }
 
-    .carousel-caption {
-        left: 50%; /* Centra la caja de texto */
-        top: 50%; /* Ajusta verticalmente para evitar que el texto se salga del carrusel */
-        transform: translate(-50%, -50%); /* Centra la caja de texto respecto a su posición */
-        width: 90%; /* Hace la caja de texto más estrecha para adaptarse a pantallas pequeñas */
-        padding: 1rem; /* Reduce el padding para dispositivos móviles */
-        font-size: 14px; /* Reduce el tamaño de la fuente para mejorar la legibilidad */
-    }
-
-    .carousel-item img {
-        min-height: 150px; /* Altura mínima más pequeña para imágenes */
-    }
+  .service-item:hover {
+    transform: none; /* Elimina la transformación en hover para evitar efectos extraños al tocar */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra ligeramente más prominente en hover */
+  }
 }
 
-/* Estilos Generales para la Sección de Servicios */
 
-/* Ajustes para las Secciones de Servicio */
-.service-section {
-    display: flex;
-    flex-direction: column; /* Cambio a dirección de columna para un enfoque más moderno */
-    align-items: center; /* Centrado horizontal */
-    justify-content: center; /* Centrado vertical */
-    margin: 2rem auto; /* Espacio simétrico horizontalmente y separación entre secciones */
-    padding: 3rem 1rem; /* Padding reducido para un diseño más limpio */
-    background-color: #000; /* Fondo negro para resaltar los servicios */
-    border-radius: 12px; /* Bordes más redondeados para un aspecto suave */
-    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.05); /* Sombra blanca sutil para un efecto elevado sobre fondo negro */
-    transition: all 0.3s ease; /* Transición suave para todos los estados */
-    overflow: hidden; /* Esconde los elementos que desborden el contenedor */
+
+/* Testimonios */
+.testimonials-header {
+  text-align: center; /* Centra el texto */
+  padding: 4rem 0; /* Espaciado arriba y abajo del título */
+  position: relative; /* Para la línea decorativa */
 }
 
-/* Estilos para Descripciones e Imágenes */
-.service-section .description {
-    text-align: center; /* Texto centrado para las descripciones */
-    padding: 2rem; /* Espaciado interno para la descripción */
+.testimonials-header h1 {
+  font-size: 2.5rem; /* Tamaño grande y prominente para el título */
+  color: white; /* Color oscuro para contraste */
+  margin-bottom: .5rem; /* Espacio debajo del título principal */
 }
 
-.service-section .description h2 {
-    color: #E2E8F0; /* Texto claro para un alto contraste */
-    margin: 0.5em 0; /* Espacio optimizado entre elementos */
-    font-size: 2.2rem; /* Aumento del tamaño de la fuente */
-    font-weight: 600; /* Fuente menos pesada para un aspecto limpio */
+.testimonials-header .tagline {
+  font-size: 1.2rem; /* Tamaño menor para el subtítulo */
+  color: white; /* Color más suave para el subtítulo */
+  margin-bottom: 2rem; /* Espacio debajo del subtítulo */
 }
 
-.service-section .description p {
-    color: #B2BEC3; /* Gris más claro para el texto que mejora la legibilidad */
-    margin-bottom: 1.5rem; /* Más espacio antes del botón CTA */
+.testimonials-header::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1rem; /* Posición debajo del título */
+  width: 50px; /* Ancho de la línea decorativa */
+  height: 3px; /* Altura de la línea decorativa */
+  background-color: #00adb5; /* Color de la línea, ajusta según tu paleta de colores */
+  border-radius: 1.5px; /* Bordes ligeramente redondeados */
 }
 
-/* Estilo para Imágenes */
-.service-section .image img {
-    max-width: 80%; /* Asegura que la imagen sea grande y centrada */
-    border-radius: 12px; /* Bordes redondeados para las imágenes */
-    margin: 2rem 0; /* Espaciado alrededor de la imagen */
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1); /* Sombra sutil para efecto flotante */
-}
-
-/* Estilos para Botones de Acción (Call to Action - CTA) */
-.cta {
-    background-color: #0DCAF0; /* Color brillante y llamativo para el CTA */
-    color: #000; /* Texto oscuro para un alto contraste */
-    padding: 12px 36px; /* Botones más grandes y atractivos */
-    border-radius: 30px; /* Bordes aún más redondeados para un estilo moderno */
-    font-size: 1rem; /* Tamaño de la fuente del botón */
-    font-weight: 600; /* Fuente más negrita para destacar */
-    letter-spacing: 0.5px; /* Espaciado de letras para definición */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada para el botón */
-    margin-top: 1rem; /* Espaciado adicional encima del botón */
-    transition: all 0.3s ease; /* Transición suave para todos los estados */
-}
-
-.cta:hover {
-    background-color: #0B95D0; /* Oscurecer el color al pasar el mouse */
-    transform: translateY(-2px); /* Pequeña elevación del botón al pasar el mouse */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada en hover */
-}
-
-@media (max-width: 768px) {
-    .service-section {
-        padding: 2rem 1rem; /* Padding ajustado para móviles */
-    }
-
-    .service-section .description, .service-section .image {
-        flex-basis: 100%; /* Cada uno toma el 100% del ancho en móviles */
-    }
-}
-  
 
 .testimonials-section {
-    background: linear-gradient(245deg, #000000, #0a0a0a 85%); /* Fondo con degradado para efecto dinámico */
-    color: #E2E8F0;
-    padding: 100px 50px; /* Ajusta el espaciado para mayor impacto visual */
-    position: relative; /* Necesario para el posicionamiento absoluto de elementos internos */
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,1) 100%);
+  color: #E2E8F0;
+  padding: 100px 50px; /* Ajusta el espaciado para mayor impacto visual */
+  position: relative; /* Necesario para el posicionamiento absoluto de elementos internos */
 }
 
 .title-style-six h2 {
-    font-size: 3rem; /* Aumenta el tamaño para destacar */
-    color: #FFFFFF;
-    margin-bottom: 1rem;
-    position: relative;
-    z-index: 2; /* Asegura que el texto esté por encima del fondo */
+  font-size: 3rem; /* Aumenta el tamaño para destacar */
+  color: white; /* Utiliza el color primario para títulos */
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2; /* Asegura que el texto esté por encima del fondo */
 }
 
 .testimonialsSlider .item {
-    position: relative; /* Posicionamiento relativo para controlar la superposición */
-    padding: 30px;
-    margin: 20px 15px;
-    display: flex; /* Acomoda los testimonios en fila */
-    align-items: center; /* Alinea verticalmente */
+  position: relative; /* Posicionamiento relativo para controlar la superposición */
+  padding: 30px;
+  margin: 20px 15px;
+  display: flex; /* Acomoda los testimonios en fila */
+  align-items: center; /* Alinea verticalmente */
 }
 
 .testimonial-item {
-    background: rgba(255, 255, 255, 0.1); /* Fondo translúcido para el contenido */
-    padding: 20px 40px; /* Ajusta el padding para un diseño más limpio */
-    border-radius: 10px; /* Bordes redondeados sutiles */
-    margin-right: 30px; /* Espacio entre los ítems del slider */
-    box-shadow: 0 10px 20px rgba(255,255,255,0.07); /* Sombra suave para efecto flotante */
-    backdrop-filter: blur(5px); /* Efecto de desenfoque detrás de los elementos */
-    position: relative;
-    z-index: 2; /* Asegura que el elemento esté por encima del fondo */
+  background: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+  padding: 20px 40px; /* Ajusta el padding para un diseño más limpio */
+  border-radius: 10px; /* Bordes redondeados sutiles */
+  margin: 0 auto 30px; /* Centra los testimonios y añade espacio debajo de cada uno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para un efecto flotante */
+  backdrop-filter: blur(5px); /* Efecto de desenfoque detrás de los elementos */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para transformación y sombra */
+  min-height: 200px; /* Altura mínima para uniformidad */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espacia el contenido uniformemente */
 }
 
 .testimonial-item:hover {
-    box-shadow: 0 20px 40px rgba(255,255,255,0.15);
+  transform: translateY(-5px); /* Mueve el elemento ligeramente hacia arriba */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el ratón */
 }
 
 .testimonial-item p {
-    font-size: 1.1rem; /* Aumenta el tamaño para mejorar la legibilidad */
-    color: #FFFFFF;
-    line-height: 1.7;
-    margin-bottom: 1rem;
+  font-size: 1.1rem; /* Aumenta el tamaño para mejorar la legibilidad */
+  color: var(--text-color); /* Utiliza el color de texto definido */
+  line-height: 1.7;
+  margin-bottom: 1rem;
 }
 
 .testimonial-item h4, .testimonial-item span {
-    color: #0DCAF0; /* Color brillante para los nombres y cargos */
+  color: #0DCAF0; /* Utiliza el color primario para nombres y cargos */
 }
 
 /* Estilos para los botones de navegación del carrusel */
 .slider-arrows div {
-    background-color: #0DCAF0;
-    color: #fff;
-    padding: 10px; /* Botones más grandes y fáciles de interactuar */
-    border-radius: 50%;
-    position: absolute; /* Posicionamiento absoluto dentro de la sección */
-    top: 50%; /* Centrado verticalmente */
-    transform: translateY(-50%); /* Ajuste fino para centrado perfecto */
-    cursor: pointer; /* Cursor tipo mano para botones */
-    z-index: 3; /* Asegura que los botones estén por encima de todo */
+  background-color: #0DCAF0;
+  color: #fff;
+  padding: 10px; /* Botones más grandes y fáciles de interactuar */
+  border-radius: 50%;
+  position: absolute; /* Posicionamiento absoluto dentro de la sección */
+  top: 50%; /* Centrado verticalmente */
+  transform: translateY(-50%); /* Ajuste fino para centrado perfecto */
+  cursor: pointer; /* Cursor tipo mano para botones */
+  z-index: 3; /* Asegura que los botones estén por encima de todo */
 }
 
 /* Ajustes para que los botones aparezcan a la izquierda y derecha */
 .slider-arrows div.left { left: 25px; }
 .slider-arrows div.right { right: 25px; }
 
-/* Ajuste de responsividad */
+
+/* Ajuste de responsividad para pantallas pequeñas */
 @media (max-width: 768px) {
-    .testimonialsSlider .item { margin: 0 auto; }
-    .testimonial-item { margin: 0 10px; }
-    .slider-arrows div { display: none; } /* Esconde los botones en dispositivos móviles para evitar el hacinamiento */
+  .testimonials-section {
+      padding: 50px 20px; /* Espaciado reducido para pantallas pequeñas */
+  }
+
+  .title-style-six h2 {
+      font-size: 2rem; /* Tamaño de fuente más pequeño para el título */
+      text-align: center; /* Centra el título en la pantalla */
+      margin-bottom: 0.5rem;
+  }
+
+  .testimonialsSlider {
+      padding-top: 60px; /* Espacio superior reducido */
+  }
+
+  .testimonialsSlider .item {
+      padding: 20px; /* Padding reducido para los ítems del slider */
+      margin: 10px 0; /* Margen vertical para separar los ítems */
+      display: block; /* Los ítems se muestran uno debajo del otro */
+  }
+
+  .testimonial-item {
+      padding: 15px; /* Padding interno más pequeño */
+      margin-right: 0; /* Margen derecho eliminado */
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Sombra de caja más sutil */
+      backdrop-filter: blur(3px); /* Menos desenfoque para mejorar la legibilidad */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .testimonial-item:hover {
+    transform: translateY(-5px); /* Mueve el elemento ligeramente hacia arriba */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada para destacar */
+}
+
+  .testimonial-item p {
+      font-size: 1rem; /* Tamaño de fuente más pequeño para el párrafo */
+  }
+
+  .testimonial-item h4 {
+      font-size: 1.2rem; /* Tamaño de fuente más grande para el nombre */
+  }
+
+  .testimonial-item span {
+      font-size: 0.9rem; /* Tamaño de fuente más pequeño para el cargo */
+  }
+  
+  /* Esconde los botones de navegación del carrusel en dispositivos móviles */
+  .slider-arrows div {
+      display: none;
+  }
+}
+
+
+/* Acerca de mí */
+.about-header {
+  text-align: center;
+  color: #333;
+  padding: 4rem 0;
+  position: relative;
+  background-color: white;
+}
+
+.about-header h1 {
+  font-size: 2.5rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.about-header .tagline {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #6c757d;
+}
+
+.about-header::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1rem;
+  width: 50px;
+  height: 3px;
+  background-color: #00adb5;
+  border-radius: 1.5px;
+}
+
+/* Asegúrate de agregar las media queries para pantallas pequeñas, como en los encabezados anteriores */
+@media (max-width: 768px) {
+  .about-header h1 {
+    font-size: 2rem;
+  }
+
+  .about-header .tagline {
+    font-size: 1rem;
+  }
 }
 
 
 #about-me {
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 60px 0;
-    text-align: center;
+  color: #ffffff;
+  padding: 4rem 0; /* Espaciado generoso para respirar */
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
 }
 
 .about-me-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* Espacio alrededor de los elementos */
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centrar el contenedor */
+  padding: 0 2rem; /* Padding lateral */
+  background-color: white;
 }
 
 .about-me-profile {
-    flex-basis: 35%;
+  margin-right: 2rem; /* Ajusta este valor como sea necesario para crear más espacio */
 }
 
-.profile-picture {
-    width: 200px;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
+.about-me-profile figure {
+  text-align: center; /* Centrar el contenido de la figura */
+  margin: 0; /* Eliminar el margen predeterminado */
 }
 
-.profile-picture:hover {
-    transform: scale(1.1);
+.about-me-profile img.profile-picture {
+  border-radius: 50%; /* Hace la imagen redonda */
+  max-width: 200px; /* Tamaño máximo de la imagen */
+  border: 5px solid #00adb5; /* Borde sólido para la imagen */
 }
 
-.about-me-info {
-    flex-basis: 60%;
-    padding: 0 20px;
+.about-me-profile figcaption {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: black; /* Color más claro para la leyenda */
 }
 
 .about-me-info h2 {
-    font-size: 2.5rem;
-    color: #007bff;
-    margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #6c757d;
 }
 
 .about-me-info p {
-    text-align: left;
-    line-height: 1.6;
+  color: #6c757d;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.about-me-links {
+  margin-top: 2rem;
 }
 
 .about-me-links h3 {
-    font-size: 1.8rem;
-    color: #333;
-    margin: 40px 0 20px 0;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .about-me-links a {
-    color: #007bff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
+  color: #00adb5; /* Color de enlace que coincide con el esquema de colores */
+  text-decoration: none; /* No subrayar los enlaces */
+  margin-right: 0.5rem;
 }
 
 .about-me-links a:hover {
-    color: #0056b3;
+  text-decoration: underline; /* Subrayar en hover para indicar interactividad */
 }
 
+/* Responsividad */
 @media (max-width: 768px) {
-    .about-me-container {
-        flex-direction: column;
-    }
+  .about-me-container {
+    flex-direction: column; /* Apilar verticalmente en pantallas pequeñas */
+  }
+  .about-me-profile {
+    margin-right: 0; /* Restablece el margen para dispositivos móviles */
+    margin-bottom: 2rem; /* Mantiene el espacio entre la imagen y el texto */
+  }
+  .about-me-profile,
+  .about-me-info {
+    width: 100%; /* Ocupar el ancho completo en pantallas pequeñas */
+    text-align: center;
+  }
 
-    .about-me-profile, .about-me-info {
-        flex-basis: 100%;
-    }
-
-    .profile-picture {
-        margin: 0 auto 30px;
-    }
-
-    .about-me-info p {
-        text-align: center;
-    }
+  .about-me-profile {
+    margin-bottom: 2rem; /* Espacio entre la imagen y el texto de info */
+  }
 }
+
+
 
 
 /* Estilos del footer */

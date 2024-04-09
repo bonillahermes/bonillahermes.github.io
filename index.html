@@ -28,9 +28,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
-    <script src="script.js"></script>
+
     <script src="https://kit.fontawesome.com/b5b69dd3f6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Z2LF9ST00"></script>
@@ -67,7 +69,13 @@
 
     <!-- Tilt js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
     
+     <!-- script página -->
+    <script src="script.js"></script>
 </head>
 
 <body data-spy="scroll" data-target="#one-page-nav" data-offset="120">
@@ -94,6 +102,9 @@
             <a href="#blog" class="nav-link" title="Lee mi blog">Blog</a>
         </li>
         <li class="nav-item">
+            <a href="https://api.whatsapp.com/send/?phone=573009769468&text&type=phone_number&app_absent=0" class="nav-link" title="Capacitate conmigo">Cursos</a>
+        </li>
+        <li class="nav-item">
             <a href="https://api.whatsapp.com/send/?phone=573009769468&text&type=phone_number&app_absent=0" class="nav-link" title="Ponte en contacto conmigo">Contacto</a>
         </li>
         <li class="nav-item">
@@ -104,15 +115,21 @@
         </li> 
       </ul>
     </div>
-</nav>
+  </nav>
+
 
 <!-- Carrusel -->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carousel" class="carousel-container" data-ride="carousel">
+    <div id="carousel" class="carousel-container" data-ride="carousel">
+        <svg viewBox="0 15 100 20" preserveAspectRatio="none" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
+            <path d="M0,40 C25,30 75,50 100,40 V50 H0 Z" fill="currentColor"></path>
+        </svg>
+
     <!-- Indicadores del carrusel -->
     <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      <li data-target="#carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel" data-slide-to="1"></li>
+      <li data-target="#carousel" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
         <!-- Primer Banner -->
@@ -141,11 +158,11 @@
         </div>
     </div>
     <!-- Controles del carrusel -->
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
@@ -153,108 +170,70 @@
 
 
 <!-- Servicios -->
-
+<section class="service-header">
+    <h1>Servicios</h1>
+    <p class="tagline">¡No solo son soluciones, es transformar tus negocios!</p>
+    <p>Desde inteligencia artificial hasta análisis predictivo, visualización de datos y más. Estoy aquí para llevar tu empresa al próximo nivel o impulsar tus proyectos.</p>
+  </section>
+  
 <main>
-    <!-- Inteligencia Artificial -->
-        <section id="ai" class="service-section" data-aos="fade-up">
-            <div class="description">
-                <h2>Transforma tu Negocio con IA</h2>
-                <p>Automatiza procesos y potencia el análisis avanzado con nuestras soluciones de inteligencia artificial. Descubre cómo podemos ayudarte a mejorar la toma de decisiones y optimizar tus operaciones.</p>
-                <a href="#" class="cta">Explora más</a>
-            </div>
-            <div class="image js-tilt">
-                <img src="images/service/AI.png" alt="Inteligencia Artificial aplicada">
-            </div>
-        </section>
-        <!-- Análisis Predictivo -->
-        <section id="predictive-analysis" class="service-section alt-layout" data-aos="fade-up">
-            <div class="description">
-                <h2>Anticipa el Futuro con Análisis Predictivo</h2>
-                <p>Descubre patrones y proyecta tendencias futuras. Nuestros modelos predictivos son la clave para tomar decisiones estratégicas informadas y mantener a tu empresa un paso adelante.</p>
-                <a href="#" class="cta">Conoce más</a>
-            </div>
-            <div class="image js-tilt">
-                <img src="images/service/predictivo.png" alt="Diagrama de análisis predictivo">
-            </div>
-        </section>
+    <div class="services-grid">
       
-        <!-- Visualización de Datos -->
-        <section id="data-visualization" class="service-section" data-aos="fade-up">
-            <div class="description">
-                <h2>Historias Contadas por Datos</h2>
-                <p>Transformamos datos crudos en dashboards e historias visuales claras. Nuestras visualizaciones son herramientas poderosas para comunicar insights complejos de manera efectiva.</p>
-                <a href="#" class="cta">Explora nuestras soluciones</a>
-            </div>
-            <div class="image js-tilt">
-                <img src="images/service/visual.png" alt="Visualización de datos">
-            </div>
-        </section>
+      <!-- Servicio de Análisis Predictivo -->
+      <div class="service-item" id="predictive-analysis">
+        <img src="images/service/predictivo.png" alt="Análisis Predictivo">
+        <h2>Análisis Predictivo</h2>
+      </div>
       
-        <!-- Minería de Datos -->
-        <section id="data-mining" class="service-section alt-layout" data-aos="fade-up">
-            <div class="description">
-                <h2>Descubre Insights con Minería de Datos</h2>
-                <p>Profundiza en tus datos para revelar conexiones ocultas y oportunidades de crecimiento. Nuestra minería de datos es la herramienta que necesitas para informar decisiones estratégicas.</p>
-                <a href="#" class="cta">Aprende más</a>
-            </div>
-            <div class="image js-tilt">
-                <img src="images/service/mining.png" alt="Herramientas de minería de datos">
-            </div>
-        </section>
+      <!-- Servicio de Visualización de Datos -->
+      <div class="service-item" id="data-visualization">
+        <img src="images/service/visual.png" alt="Visualización de Datos">
+        <h2>Visualización de Datos</h2>
+      </div>
       
-        <!-- Machine Learning y Desarrollo de Modelos -->
-        <section id="machine-learning" class="service-section" data-aos="fade-up">
-            <div class="description">
-                <h2>Innovación con Machine Learning</h2>
-                <p>Nuestros modelos de aprendizaje automático se adaptan y mejoran con tus datos, automatizando procesos y descubriendo conocimientos para impulsar la eficiencia y la innovación.</p>
-                <a href="#" class="cta">Descubre cómo</a>
-            </div>
-            <div class="image js-tilt">
-                <img src="images/service/machine.png" alt="Proceso de Machine Learning" data-aos="fade-up">
-            </div>
-        </section>
+      <!-- Servicio de Minería de Datos -->
+      <div class="service-item" id="data-mining">
+        <img src="images/service/mining.png" alt="Minería de Datos">
+        <h2>Minería de Datos</h2>
+      </div>
       
-        <!-- Computación en la Nube -->
-        <section id="cloud-computing" class="service-section alt-layout" data-aos="fade-up">
-            <div class="description">
-                <h2>Escalabilidad con la Nube</h2>
-                <p>Moderniza tu infraestructura TI con soluciones de nube que garantizan escalabilidad, seguridad y eficiencia. Nuestra estrategia de nube personalizada es la clave para tu crecimiento.</p>
-                <a href="#" class="cta">Explora la nube</a>
-            </div>
-            <div class="image js-tilt">
-                <img src="images/service/cloud.png" alt="Infraestructura de computación en la nube">
-            </div>
-        </section>
+      <!-- Servicio de Machine Learning -->
+      <div class="service-item" id="machine-learning">
+        <img src="images/service/machine.png" alt="Machine Learning">
+        <h2>Machine Learning & AI</h2>
+      </div>
       
-        <!-- Consultoría en Ciencia de Datos -->
-        <section id="data-consulting" class="service-section" data-aos="fade-up">
-            <div class="description">
-                <h2>Consultoría Experta en Datos</h2>
-                <p>Maximiza el valor de tus datos con nuestra consultoría experta. Te acompañamos desde la estrategia hasta la implementación para que puedas innovar y competir eficazmente.</p>
-                <a href="#" class="cta">Inicia la transformación</a>
-            </div>
-            <div class="image js-tilt">
-                <img src="images/service/consulting.png" alt="Consultoría en Ciencia de Datos">
-            </div>
-        </section>
-</main>
+      <!-- Servicio de Computación en la Nube -->
+      <div class="service-item" id="cloud-computing">
+        <img src="images/service/cloud.png" alt="Computación en la Nube">
+        <h2>Computación en la Nube</h2>
+      </div>
+      
+      <!-- Servicio de Consultoría en Ciencia de Datos -->
+      <div class="service-item" id="data-consulting">
+        <img src="images/service/consulting.png" alt="Consultoría en Ciencia de Datos">
+        <h2>Consultoría en Ciencia de Datos</h2>
+      </div>
+    </div>
+  </main>
+  
 
 <!-- Testimonios -->
-<div class="testimonials-section mt-0 md-mt-100" id="testimonials">
-    <div class="container">
-        <div class="title-style-six">
-            <h2>Testimonios</h2>
-        </div>
-    </div>
-
+<div class="testimonials-section" id="testimonials">
+       <!-- Encabezado de la sección de testimonios -->
+       <div class="testimonials-header">
+        <h1>Testimonios</h1>
+        <p class="tagline">Historias de éxito de clientes</p>
+      </div>
     <!-- Slider de Testimonios -->
-    <div class="testimonialsSlider pt-120 md-pt-70">
+    <div class="testimonialsSlider">
+
         <!-- Testimonio sobre Salud -->
         <div class="item">
             <div class="testimonial-item">
                 <p>"Implementando IA en nuestros historiales clínicos, hemos mejorado significativamente la precisión diagnóstica y optimizado el tratamiento de nuestros pacientes. Un cambio revolucionario para nuestra práctica médica."</p>
-                <h4>Dr. Alex Mendez</h4>
-                <span>Director Médico, Hospital General</span>
+                <h4>Marcela Mendez</h4>
+                <span>Directora Médica</span>
             </div>
         </div>
         <!-- Testimonio sobre Política -->
@@ -262,7 +241,7 @@
             <div class="testimonial-item">
                 <p>"La analítica avanzada para las elecciones locales nos proporcionó insights críticos que guiaron nuestra campaña hacia el éxito. La capacidad de prever tendencias y adaptar estrategias en tiempo real fue invaluable."</p>
                 <h4>Laura Jiménez</h4>
-                <span>Estratega Política, Campaña Local</span>
+                <span>Estratega Política, Campaña Concejo</span>
             </div>
         </div>
         <!-- Testimonio sobre Economía -->
@@ -270,7 +249,7 @@
             <div class="testimonial-item">
                 <p>"Gracias a los modelos de machine learning para análisis de ventas, hemos visto un aumento significativo en nuestra rentabilidad. Identificar patrones y adaptar nuestras estrategias nunca había sido tan eficaz."</p>
                 <h4>Carlos Ruiz</h4>
-                <span>CEO, Innovaciones Digitales</span>
+                <span>Red de Supermercados Locales</span>
             </div>
         </div>
         <!-- Invitación a ser parte de la historia -->
@@ -285,6 +264,11 @@
 </div>
 
 <!-- Acerca de mí -->
+<section class="about-header">
+    <h1>Acerca de mí</h1>
+    <p class="tagline">Estadístico y Científico de Datos</p>
+  </section>
+  
 <div id="about-me">
     <div class="about-me-container">
         <div class="about-me-profile">
@@ -294,20 +278,26 @@
             </figure>
         </div>
         <div class="about-me-info">
-            <h2>Sobre Mí</h2>
-            <p>Soy <strong>Hermes</strong>, un estadístico, científico de datos y programador con amplia experiencia en <em>análisis estadístico, machine learning, visualización de datos y desarrollo de soluciones basadas en IA</em>. Me especializo en transformar grandes volúmenes de datos en decisiones estratégicas, ayudando a las empresas a alcanzar sus objetivos mediante soluciones de analítica avanzada y optimización de procesos.</p>
-            <p>Comprometido con la excelencia, continuamente busco nuevas tecnologías y metodologías para mejorar mis habilidades y ofrecer los mejores resultados. En mi tiempo libre, disfruto de <em>tus intereses personales</em>, lo que me permite mantener un equilibrio y una perspectiva fresca en mi trabajo.</p>
+            <p>
+                <strong>Hermes Bonilla</strong>, su aliado estratégico en el mundo de los datos. Como <strong>estadístico y científico de datos</strong> certificado, tengo el privilegio de colaborar con empresas visionarias, aplicando más de cuatro años en <em>análisis estadístico, machine learning y desarrollo de soluciones de IA</em> para convertir complejos volúmenes de datos en decisiones tácticas y estratégicas claras y efectivas.
+            </p>
+            <p>
+                Mi compromiso va más allá de la entrega de informes y algoritmos; me dedico a proporcionar a cada cliente una comprensión clara y aplicable de cómo los datos pueden impulsar su negocio hacia adelante. Al mantenerme a la vanguardia de las tecnologías emergentes y las prácticas innovadoras, garantizo soluciones que no solo responden a las necesidades actuales, sino que también establecen una base sólida para el futuro.
+            </p>
+            <p>
+                Fuera del teclado, me encanta explorar la fotografía y el trekking, actividades que agudizan mi atención al detalle y mi capacidad de observación. Esta combinación de análisis y aprecio por la belleza del mundo natural alimenta mi creatividad y mi pasión por la resolución de problemas. Es esta fusión de rigor técnico y perspectiva holística lo que me define y asegura que cada proyecto no solo cumpla, sino que supere las expectativas, construyendo una base de confianza y resultados palpables.
+            </p>            
             <div class="about-me-links">
                 <h3>Conéctate Conmigo</h3>
                 <a href="https://www.linkedin.com/in/bonillahermes/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
                 <a href="https://github.com/bonillahermes" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
         </div>
+        
     </div>
 </div>
 
-
-
+  
 <!-- Footer -->
 <footer class="footer">
     <div class="container">
@@ -317,7 +307,7 @@
             <h3 class="footer-title">Encuéntrame En:</h3><!-- Título de la sección -->
             <div class="footer-brand">
             </div>
-                <div class="footer-social">
+            <div class="footer-social">
                 <!-- Íconos de redes sociales -->
                 <!-- LinkedIn -->
                 <a href="https://www.linkedin.com/in/bonillahermes/" target="_blank" aria-label="LinkedIn" title="LinkedIn">

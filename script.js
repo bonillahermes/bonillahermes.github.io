@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
       toggleButton.classList.toggle('active'); // Añade o elimina la clase 'active'
       navbarLinks.classList.toggle('active'); // Añade o elimina la clase 'active' para mostrar u ocultar los enlaces de navegación
     });
+
+
     // Inicialización de bibliotecas y plugins
     
     // Animate On Scroll (AOS)
@@ -43,6 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
             ]    
         });
     });
+
+    
     
     
     // Fancybox para galerías
@@ -163,8 +167,5 @@ document.addEventListener('scroll', function() {
     }
 });
 
-// Funciones relacionadas con la internacionalización y carga de contenido
 
-function setBlog(id) {
-    localStorage.setItem("blog-id", id);
-}
+
